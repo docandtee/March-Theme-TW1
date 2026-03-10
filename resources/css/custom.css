@@ -270,6 +270,20 @@ h4 {
   .text-block:nth-child(2n) {
     background-color: var(--color-light) !important;
     color: var(--color-dark) !important;
+
+    .arrow-btn {
+      color: var(--color-dark) !important;
+      .arrow {
+        fill: var(--color-dark);
+      }
+
+      &:hover {
+        color: var(--color-light) !important;
+        .arrow {
+          fill: var(--color-light) !important;
+        }
+      }
+    }
   }
 }
 
@@ -281,7 +295,7 @@ h4 {
 
   &:hover {
     .arrow {
-      fill: var(--color-dark);
+      fill: var(--color-dark) !important;
     }
   }
 }
