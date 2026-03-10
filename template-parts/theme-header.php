@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <header class="w-full
+    <header class="w-full z-5
         <?php 
             global $post; $post_id = get_the_ID();
             global $template;
