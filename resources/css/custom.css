@@ -325,6 +325,15 @@ h4 {
     background-size: 960px 400px;
     animation: animParticle2 20s linear infinite;
   }
+
+  &.particle-3 {
+    background-size: 480px 200px;
+    animation: animParticle 30s linear infinite;
+  }
+  &.particle-3b {
+    background-size: 480px 200px;
+    animation: animParticle2 30s linear infinite;
+  }
 }
 
 @keyframes animParticle {
