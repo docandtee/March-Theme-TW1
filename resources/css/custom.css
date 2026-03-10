@@ -313,8 +313,8 @@ h4 {
     width: 500px;
     height: 500px;
     background-size: contain;
-    -webkit-animation: animParticle 60s linear infinite;
-    animation: animParticle 60s linear infinite;
+    -webkit-animation: animParticle 5s linear infinite;
+    animation: animParticle 5s linear infinite;
   }
 }
 
