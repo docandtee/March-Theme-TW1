@@ -11,27 +11,27 @@
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "#E56145"
+          "color": "#36A6A0"
         },
         {
           "name": "Secondary",
           "slug": "secondary",
-          "color": "#F7B239"
+          "color": "#0054AF"
         },
         {
           "name": "Tertiary",
           "slug": "tertiary",
-          "color": "#5D4EC7"
+          "color": "#166561"
         },
         {
           "name": "Dark",
           "slug": "dark",
-          "color": "#2F2F47"
+          "color": "#293B3C"
         },
         {
           "name": "Light",
           "slug": "light",
-          "color": "#F1EAD3"
+          "color": "#FAF4E7"
         }
       ]
     },
