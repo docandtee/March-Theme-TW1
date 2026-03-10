@@ -58,7 +58,7 @@ if (!class_exists('Tailwind_Navwalker')) {
                 $atts['class'] = 'block px-3 py-2 text-white lg:text-dark hover:text-primary font-display leading-none no-underline!';
                 $atts['role'] = 'menuitem';
             } else {
-                $atts['class'] = 'cursor-pointer menu-link px-3 py-2 inline-flex items-center text-white hover:text-primary text-xl no-underline!';
+                $atts['class'] = 'cursor-pointer menu-link px-3 py-2 inline-flex items-center text-white hover:text-primary text-xl no-underline! font-bold';
             }
 
             // Add aria-current for current page
