@@ -22,7 +22,7 @@
 						echo '
 							<div class="mt-8 mb-4 flex"><a 
 								href="'.esc_url($button_link).'" 
-								class="p-0 font-bold bg-transparent hover:bg-transparent text-white hover:text-dark flex items-center content-between !no-underline transition duration-200 ease-in-out text-nowrap"
+								class="p-0 bg-transparent hover:bg-transparent text-white! hover:text-dark! flex items-center content-between !no-underline transition duration-200 ease-in-out text-nowrap"
 							>'.esc_html($button_text).' 
 							<svg id="Group_14" data-name="Group 14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.666" height="21.496" viewBox="0 0 28.666 21.496" class="btn-arrow ms-2">
 								<defs>
