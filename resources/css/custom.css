@@ -309,29 +309,15 @@ h4 {
   background-image: url(../images/arrows-bg.svg);
 
   &.particle-1 {
-    -webkit-animation: animParticle 5s linear infinite;
     animation: animParticle 5s linear infinite;
-  }
-}
-
-@-webkit-keyframes animParticle {
-  from {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  to {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
   }
 }
 
 @keyframes animParticle {
   from {
-    -webkit-transform: translateY(0px);
             transform: translateY(0px);
   }
   to {
-    -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
   }
 }
