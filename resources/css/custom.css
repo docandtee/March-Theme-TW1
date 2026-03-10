@@ -311,11 +311,24 @@ h4 {
   &.particle-1 {
     animation: animParticle 5s linear infinite;
   }
+
+  &.particle-1b {
+    animation: animParticle2 5s linear infinite;
+  }
 }
 
 @keyframes animParticle {
   from {
             transform: translateY(0px);
+  }
+  to {
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes animParticle2 {
+  from {
+            transform: translateY(-100%);
   }
   to {
             transform: translateY(-100%);
