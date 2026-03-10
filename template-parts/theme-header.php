@@ -80,7 +80,7 @@
                     <?php if (has_nav_menu('primary')) : ?>
                         <div 
                             id="primary-navigation"
-                            class="flex justify-center lg:justify-end items-center bg-dark md:bg-transparent fixed lg:relative w-full lg:w-auto h-screen lg:h-auto top-0 left-0 lg:top-auto lg:left-auto z-50 lg:z-auto transition duration-200 ease-in-out"
+                            class="flex justify-center lg:justify-end items-center bg-dark lg:bg-transparent fixed lg:relative w-full lg:w-auto h-screen lg:h-auto top-0 left-0 lg:top-auto lg:left-auto z-50 lg:z-auto transition duration-200 ease-in-out"
                             role="navigation"
                             aria-label="Primary navigation"
                         >
@@ -90,7 +90,7 @@
                                 'container'       => 'nav',
                                 'container_class' => 'menu-main-menu-container w-full lg:w-auto px-10 lg:px-0',
                                 'container_id'    => 'primary-menu',
-                                'menu_class'      => 'md:flex [&_a]:!no-underline',
+                                'menu_class'      => 'lg:flex [&_a]:!no-underline',
                                 'fallback_cb'     => 'Tailwind_Navwalker::fallback',
                                 'walker'            => new Tailwind_Navwalker,
                             ) ); ?>
