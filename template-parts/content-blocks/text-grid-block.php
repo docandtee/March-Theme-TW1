@@ -3,7 +3,7 @@
 	$fullwidth = get_field('full_width_blocks');
 ?>
    
-<section class="text-grid-block <?php if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
+<section class="text-grid-block m-0! <?php if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
 
 	<div class="grid grid-flow-row grid-cols-12 gap-0">
 
