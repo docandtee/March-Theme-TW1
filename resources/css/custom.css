@@ -310,20 +310,20 @@ h4 {
 
   &.particle-1 {
     background-size: 1920px 800px;
-    animation: animParticle 5s linear infinite;
+    animation: animParticle 10s linear infinite;
   }
   &.particle-1b {
     background-size: 1920px 800px;
-    animation: animParticle2 5s linear infinite;
+    animation: animParticle2 10s linear infinite;
   }
 
   &.particle-2 {
     background-size: 960px 400px;
-    animation: animParticle 5s linear infinite;
+    animation: animParticle 20s linear infinite;
   }
   &.particle-2b {
     background-size: 960px 400px;
-    animation: animParticle2 5s linear infinite;
+    animation: animParticle2 20s linear infinite;
   }
 }
 
