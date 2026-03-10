@@ -309,7 +309,6 @@ h4 {
   background-image: url(../images/arrows-bg.svg);
 
   &.particle-1 {
-    top: 2560px;
     width: 500px;
     height: 500px;
     background-size: contain;
