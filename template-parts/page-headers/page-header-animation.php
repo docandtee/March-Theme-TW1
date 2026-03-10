@@ -4,8 +4,7 @@
 <section class="page-header particles-bg relative overflow-hidden hero-height flex items-end justify-center" aria-label="animnated page header background">
 
         <div class="particle particle-1 absolute w-full h-full"></div>
-        <div class="particle particle-2 absolute w-full h-full"></div>
-        <div class="particle particle-3 absolute w-full h-full"></div>
+
 
     <div class="header-content relative w-full text-white">
         <?php get_template_part('template-parts/page-headers/page-header-title'); ?>
