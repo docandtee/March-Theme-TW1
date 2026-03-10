@@ -278,9 +278,9 @@ h4 {
       }
 
       &:hover {
-        color: var(--color-light) !important;
+        color: var(--color-primary) !important;
         .arrow {
-          fill: var(--color-light) !important;
+          fill: var(--color-primary) !important;
         }
       }
     }
