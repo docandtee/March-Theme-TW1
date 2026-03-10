@@ -273,7 +273,15 @@ h4 {
   }
 }
 
-.btn-arrow {
-  fill: var(--color-light);
-  height: 1rem;
+.arrow-btn {
+  .arrow {
+    fill: var(--color-light);
+    height: 1rem;
+  }
+
+  &:hover {
+    .arrow {
+      fill: var(--color-dark);
+    }
+  }
 }
