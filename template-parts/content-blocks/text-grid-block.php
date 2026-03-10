@@ -31,7 +31,7 @@
 									</clipPath>
 								</defs>
 								<g id="Group_13" data-name="Group 13" clip-path="url(#clip-path)">
-									<path id="Path_9" data-name="Path 9" d="M28.405,11.381a.9.9,0,0,0,0-1.265L18.55.26a.895.895,0,1,0-1.265,1.265l8.326,8.326H.9a.9.9,0,0,0,0,1.792H25.611L17.285,19.97a.895.895,0,0,0,1.265,1.265Z" transform="translate(0 0)" fill="#faf4e7"/>
+									<path id="Path_9" data-name="Path 9" d="M28.405,11.381a.9.9,0,0,0,0-1.265L18.55.26a.895.895,0,1,0-1.265,1.265l8.326,8.326H.9a.9.9,0,0,0,0,1.792H25.611L17.285,19.97a.895.895,0,0,0,1.265,1.265Z" transform="translate(0 0)"/>
 								</g>
 							</svg>
 								</a></div>
