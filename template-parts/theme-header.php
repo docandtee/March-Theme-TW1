@@ -33,24 +33,6 @@
         ?>
     ">
         <div class="container p-3">
-            <div class="flex justify-end items-center mb-3 lg:hidden">
-                <button 
-                    class="py-3 px-5 cursor-pointer focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:outline-none" 
-                    type="button" 
-                    @click="openSearch = !openSearch"
-                    :aria-expanded="openSearch"
-                    aria-controls="searchCollapse"
-                    aria-label="Toggle search"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-style transition duration-200 ease-in-out" aria-hidden="true">
-                        <path d="M448 272C448 174.8 369.2 96 272 96C174.8 96 96 174.8 96 272C96 369.2 174.8 448 272 448C369.2 448 448 369.2 448 272zM407.3 430C371 461.2 323.7 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272C480 323.7 461.2 371 430 407.3L571.3 548.7C577.5 554.9 577.5 565.1 571.3 571.3C565.1 577.5 554.9 577.5 548.7 571.3L407.3 430z"/>
-                    </svg>
-                </button>
-                <a 
-                    href="<?php echo esc_url(home_url('/')); ?>" 
-                    class="py-3 px-5 text-sm font-bold bg-primary hover:bg-dark border-primary text-white rounded-full !no-underline ms-4 transition duration-200 ease-in-out text-nowrap focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:outline-none"
-                >Custom button</a>
-            </div>
 
             <div class="grid grid-flow-row grid-cols-12 items-center justify-between">
 
@@ -94,26 +76,6 @@
                 <?php endif; ?>
 
                 <div class="lg:col-span-10">
-
-                    <div class="hidden lg:flex justify-end items-center mb-3">
-                        <?php get_template_part('template-parts/content-blocks/social-media-icons'); ?>
-                        <button 
-                            class="py-3 px-5 cursor-pointer" 
-                            type="button" 
-                            @click="openSearch = !openSearch"
-                            :aria-expanded="openSearch"
-                            aria-controls="searchCollapse"
-                            aria-label="Toggle search"
-                        >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-style transition duration-200 ease-in-out" aria-hidden="true">
-                                <path d="M448 272C448 174.8 369.2 96 272 96C174.8 96 96 174.8 96 272C96 369.2 174.8 448 272 448C369.2 448 448 369.2 448 272zM407.3 430C371 461.2 323.7 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272C480 323.7 461.2 371 430 407.3L571.3 548.7C577.5 554.9 577.5 565.1 571.3 571.3C565.1 577.5 554.9 577.5 548.7 571.3L407.3 430z"/>
-                            </svg>
-                        </button>
-                        <a 
-                            href="<?php echo esc_url(home_url('/')); ?>" 
-                            class="py-3 px-5 text-sm font-bold bg-primary hover:bg-dark border-primary text-white rounded-full !no-underline ms-4 transition duration-200 ease-in-out text-nowrap"
-                        >Custom button</a>
-                    </div>
 
                     <?php if (has_nav_menu('primary')) : ?>
                         <div 
