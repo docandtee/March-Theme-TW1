@@ -4,9 +4,9 @@
 <section class="page-header particles-bg relative overflow-hidden hero-height flex items-end justify-center" aria-label="animnated page header background">
 
     <div class="absolute flex justify-center items-center w-full h-full">
-        <div class="particle particle-1"></div>
-        <div class="particle particle-2"></div>
-        <div class="particle particle-3"></div>
+        <div class="particle particle-1 absolute"></div>
+        <div class="particle particle-2 absolute"></div>
+        <div class="particle particle-3 absolute"></div>
     </div>
 
     <div class="header-content relative w-full text-white">
