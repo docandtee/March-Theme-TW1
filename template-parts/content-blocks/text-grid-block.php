@@ -15,7 +15,7 @@
 		?>
 		
 			<div class="text-block col-span-12 lg:col-span-6 bg-primary text-white">
-				<div class="content-inner flex flex-col justify-center p-8 md:p-16 lg:p-20 w-full lg:h-full">
+				<div class="content-inner flex flex-col justify-center p-8 lg:p-20 w-full lg:h-full">
 					<?php if( $block_title ) { echo '<h3 class="block-bottom mb-4 mt-0!">' .esc_html($block_title). '</h3>'; } ?>
 					<?php if( $block_text ) { echo '<div class="copy-wrap">' .$block_text. '</div>'; } ?>
 					<?php if( $button_link && $button_text ) {
