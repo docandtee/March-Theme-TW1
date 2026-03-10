@@ -313,29 +313,16 @@ h4 {
     width: 500px;
     height: 500px;
     background-size: contain;
-    -webkit-animation: animParticle 60s linear infinite;
     animation: animParticle 60s linear infinite;
   }
 }
 
-@-webkit-keyframes animParticle {
-  from {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-  to {
-    -webkit-transform: translateY(-2560px);
-            transform: translateY(-2560px);
-  }
-}
 
 @keyframes animParticle {
   from {
-    -webkit-transform: translateY(0px);
             transform: translateY(0px);
   }
   to {
-    -webkit-transform: translateY(-2560px);
             transform: translateY(-2560px);
   }
 }
