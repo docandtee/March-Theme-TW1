@@ -300,7 +300,18 @@ h4 {
   }
 }
 
+.particles-bg {
+  background-color: var(--color-dark);
+  background: radial-gradient(ellipse at bottom, var(--color-dark), var(--color-tertiary));
+}
 
 .particle {
   background-image: url(../images/arrows-bg.svg);
+
+  &.particle-1 {
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    animation: moveParticle1 20s linear infinite;
+  }
 }

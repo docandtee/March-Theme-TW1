@@ -1,7 +1,7 @@
 <?php 
     $photo_credit = get_field('photo_credit');
 ?>
-<section class="page-header relative overflow-hidden hero-height flex items-end justify-center" aria-label="animnated page header background">
+<section class="page-header particles-bg relative overflow-hidden hero-height flex items-end justify-center" aria-label="animnated page header background">
 
     <div class="absolute flex justify-center items-center w-full h-full">
         <div class="particle particle-1"></div>
