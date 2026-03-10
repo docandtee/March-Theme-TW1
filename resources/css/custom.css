@@ -312,9 +312,17 @@ h4 {
     background-size: 1920px 800px;
     animation: animParticle 5s linear infinite;
   }
-
   &.particle-1b {
     background-size: 1920px 800px;
+    animation: animParticle2 5s linear infinite;
+  }
+
+  &.particle-2 {
+    background-size: 960px 400px;
+    animation: animParticle 5s linear infinite;
+  }
+  &.particle-2b {
+    background-size: 960px 400px;
     animation: animParticle2 5s linear infinite;
   }
 }

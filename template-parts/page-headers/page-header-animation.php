@@ -3,8 +3,10 @@
 ?>
 <section class="page-header particles-bg relative overflow-hidden hero-height flex items-end justify-center" aria-label="animnated page header background">
 
-        <div class="particle particle-1 absolute w-full h-full"></div>
-        <div class="particle particle-1b absolute w-full h-full"></div>
+        <div class="particle particle-1 absolute w-full h-full opacity-60"></div>
+        <div class="particle particle-1b absolute w-full h-full opacity-60"></div>
+        <div class="particle particle-2 absolute w-full h-full opacity-40"></div>
+        <div class="particle particle-2b absolute w-full h-full opacity-40"></div>
 
 
     <div class="header-content relative w-full text-white">
