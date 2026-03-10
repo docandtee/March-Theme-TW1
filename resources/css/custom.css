@@ -309,12 +309,12 @@ h4 {
   background-image: url(../images/arrows-bg.svg);
 
   &.particle-1 {
-    background-size: 1920px 700px;
+    background-size: contain;
     animation: animParticle 5s linear infinite;
   }
 
   &.particle-1b {
-    background-size: 1920px 700px;
+    background-size: contain;
     animation: animParticle2 5s linear infinite;
   }
 }
