@@ -1,0 +1,39 @@
+/**
+ * WCAG 2.2 Accessibility Styles
+ * Ensures compliance with Web Content Accessibility Guidelines 2.2
+ */
+
+/* ===========================
+   1. Focus Indicators (WCAG 2.4.7, 2.4.13)
+   =========================== */
+
+/* Enhanced focus visible indicator for keyboard navigation */
+*:focus-visible {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Links */
+a:focus-visible {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+    text-decoration: underline;
+}
+
+/* Buttons */
+button:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+/* Form inputs */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #0066cc;
+    outline-offset: 0;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}

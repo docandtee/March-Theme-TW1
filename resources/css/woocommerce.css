@@ -1,0 +1,118 @@
+.woocommerce, .woocommerce-page {
+	ul.products li.product {
+		text-align: center;
+		
+		.price {
+			color: var(--color-primary);
+		}
+		
+		.button {
+			display: none;
+		}
+
+		&.post-9190 { /* hide travel carbon calculator from product list */
+			display: none;
+		}
+	}
+	
+	div.product {
+		p.price, span.price {
+			color: var(--color-primary) !important;
+		}
+		
+		.stock {
+			color: var(--color-primary);
+		}
+		
+		form.cart .variations tbody {
+			border: none;
+		}
+		
+		.woocommerce-tabs {
+			margin-bottom: 3rem;
+			border-bottom: 1px solid var(--color-dark);
+			padding-bottom: 1rem;
+			
+			ul.tabs {
+				border: none;
+
+                li.active {
+                    background: var(--color-light);
+                    border-bottom-color: var(--color-light);
+
+                    &:before {
+                        box-shadow: 2px 2px 0 var(--color-light);
+                    }
+
+                    &:after {
+                        box-shadow: -2px 2px 0 var(--color-light);
+                    }
+                }
+			}
+
+		}
+		
+		form.cart .button {
+			height: 40px;
+		}
+	}
+	
+	#respond input#submit, a.button, button.button, input.button,
+	a.button.alt, button.button.alt, input.button.alt, #respond input#submit.alt {
+		border-radius: 0;
+		background-color: var(--color-primary);
+		color: #fff !important;
+		
+		&:hover {
+			background-color: var(--color-secondary);
+			color: #fff;
+		}
+		
+		&:disabled:hover, &:disabled[disabled]:hover {
+			background-color: var(--color-secondary);
+			color: #fff;
+		}
+		
+		&.alt, &.alt.disabled, &.alt.disabled:hover {
+			background-color: var(--color-primary);
+			
+			&:hover {
+				background-color: var(--color-secondary);
+				color: #fff;
+			}
+		}
+	}
+	
+	.quantity .qty {
+		height: 40px;
+	}
+	
+	.woocommerce-message {
+		border-top-color: var(--color-secondary);
+
+		&:before {
+			color: var(--color-secondary);
+		}
+	}
+	
+	.woocommerce-error .button, .woocommerce-info .button, .woocommerce-message .button {
+		background-color: var(--color-secondary);
+		color: #fff;
+		
+		&:hover {
+			background-color: var(--color-primary);
+			color: #fff;
+		}
+	}
+
+	.col2-set .col-1, .col2-set .col-1,
+	.col2-set .col-2, .col2-set .col-2 {
+		flex: 0 0 100%;
+		max-width: 100%;
+
+		@include media-breakpoint-up(md) {
+			flex: 0 0 48%;
+			max-width: 48%;
+		}
+	}
+}
