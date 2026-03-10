@@ -307,6 +307,7 @@ h4 {
 
 .particle {
   background-image: url(../images/arrows-bg.svg);
+  background-blend-mode: overlay;
 
   &.particle-1 {
     background-size: 1920px 800px;
