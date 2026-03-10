@@ -4,7 +4,7 @@
 <section class="page-header particles-bg relative overflow-hidden hero-height flex items-end justify-center" aria-label="animnated page header background">
 
         <div class="particle particle-1 absolute w-full h-full"></div>
-        <div class="particle particle-1b absolute w-full h-full bottom-0"></div>
+        <div class="particle particle-1b absolute w-full h-full"></div>
 
 
     <div class="header-content relative w-full text-white">
