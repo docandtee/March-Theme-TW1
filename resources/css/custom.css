@@ -265,3 +265,10 @@ h4 {
     }
   }
 }
+
+.text-grid-block {
+  .text-block:nth-child(2n) {
+    background-color: var(--color-light) !important;
+    color: var(--color-dark) !important;
+  }
+}

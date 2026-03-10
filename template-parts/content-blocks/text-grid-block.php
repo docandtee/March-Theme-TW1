@@ -3,7 +3,7 @@
 	$fullwidth = get_field('full_width_blocks');
 ?>
    
-<section class="staggered-block <?php if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
+<section class="text-grid-block <?php if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
 
 	<div class="grid grid-flow-row grid-cols-12 gap-0">
 
@@ -14,7 +14,7 @@
 			$button_link = get_sub_field('button_link');
 		?>
 		
-			<div class="text-block col-span-12 lg:col-span-6">
+			<div class="text-block col-span-12 lg:col-span-6 bg-primary text-white">
 				<div class="content-inner flex flex-col justify-center p-8 md:p-16 w-full lg:h-full">
 					<?php if( $block_title ) { echo '<h3 class="block-bottom mb-4 mt-0!">' .esc_html($block_title). '</h3>'; } ?>
 					<?php if( $block_text ) { echo '<div class="copy-wrap">' .$block_text. '</div>'; } ?>
