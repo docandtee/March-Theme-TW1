@@ -319,11 +319,11 @@ h4 {
 
   &.particle-2 {
     background-size: 960px 400px;
-    animation: animParticle 20s linear infinite;
+    animation: animParticle 16s linear infinite;
   }
   &.particle-2b {
     background-size: 960px 400px;
-    animation: animParticle2 20s linear infinite;
+    animation: animParticle2 16s linear infinite;
   }
 
   &.particle-3 {
