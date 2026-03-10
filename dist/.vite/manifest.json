@@ -1,13 +1,17 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app.Bg5K2ivK.css",
+    "file": "assets/app.10fPAP2d.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/editor-style.css": {
-    "file": "assets/editor-style.BiYKpCkh.css",
+    "file": "assets/editor-style.D7Fn9JAT.css",
     "src": "resources/css/editor-style.css",
     "isEntry": true
+  },
+  "resources/images/arrows-bg.svg": {
+    "file": "images/arrows-bg.CcFHjvdN.svg",
+    "src": "resources/images/arrows-bg.svg"
   },
   "resources/js/app.js": {
     "file": "assets/app-BZpkL4HJ.js",

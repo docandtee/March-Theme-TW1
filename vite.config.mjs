@@ -6,7 +6,7 @@ export default defineConfig(({ command }) => {
     const isBuild = command === 'build';
 
     return {
-        base: isBuild ? '/wp-content/themes/docandtee-tailwind-v1/dist/' : '/',
+        base: isBuild ? '/wp-content/themes/March-Theme-TW1/dist/' : '/',
         server: {
             port: 3000,
             cors: true,
@@ -43,4 +43,5 @@ export default defineConfig(({ command }) => {
         ],
     }
 });
+
 
