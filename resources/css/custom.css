@@ -272,3 +272,8 @@ h4 {
     color: var(--color-dark) !important;
   }
 }
+
+.btn-arrow {
+  fill: var(--color-light);
+  height: 1rem;
+}
