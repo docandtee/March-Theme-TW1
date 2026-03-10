@@ -13,7 +13,25 @@
         </div>
     </div>
 
-    <header class="w-full bg-white">
+    <header class="w-full
+        <?php 
+            global $post; $post_id = get_the_ID();
+            global $template;
+            if (
+                ! has_post_thumbnail( $post_id )
+                || ( is_single() && get_post_type() === 'post' )
+                || is_archive()
+            ) { 
+                echo ' relative bg-dark '; 
+            } else {
+                echo ' absolute ';
+            }
+
+            if (!is_page_template( 'page-wheelbase-vue.php' ) ) {
+                echo ' sticky-header ';
+            }
+        ?>
+    ">
         <div class="container p-3">
             <div class="flex justify-end items-center mb-3 lg:hidden">
                 <button 
