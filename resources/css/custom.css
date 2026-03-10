@@ -323,8 +323,8 @@ h4 {
             transform: translateY(0px);
   }
   to {
-    -webkit-transform: translateY(-2560px);
-            transform: translateY(-2560px);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
 
@@ -334,7 +334,7 @@ h4 {
             transform: translateY(0px);
   }
   to {
-    -webkit-transform: translateY(-2560px);
-            transform: translateY(-2560px);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
