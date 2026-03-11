@@ -1,16 +1,13 @@
 <?php
-	$text_center = get_field('align_text_centrally');
 	$show_sub_title = get_field('show_sub_title');
 	$page_header_subtitle = get_field('page_header_subtitle');
 	$include_a_cta_button = get_field('include_a_cta_button');
 	$cta_button_text = get_field('cta_button_text');
 	$cta_button_link = get_field('cta_button_link');
-	$text_center = get_field('align_text_centrally');
-	$pagewidth = get_field('page_width');
 ?>
 <div class="container mx-auto my-6 lg:my-20">
 	<div class="hero-content max-w-4xl">
-		<header class="<?php if( $text_center  ) { echo 'text-center';} ?>">
+		<header class="">
 			<h1 class="mb-5 [text-wrap:balance] page-header-title-words">
 				<?php
 				$title_words = preg_split('/\s+/u', get_the_title(), -1, PREG_SPLIT_NO_EMPTY);
