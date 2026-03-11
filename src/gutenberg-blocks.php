@@ -129,21 +129,22 @@ function my_acf_init() {
 			'keywords'			=> array( 'content-block'),
 			'render_template'   => 'template-parts/content-blocks/stats-block.php',
 			'enqueue_assets'    => function() {
-				$manifest_path = get_template_directory() . '/dist/.vite/manifest.json';
-				if (!is_readable($manifest_path)) {
-					return;
-				}
-				$manifest = json_decode(file_get_contents($manifest_path), true);
-				$entry = isset($manifest['resources/js/stats-block.js']) ? $manifest['resources/js/stats-block.js'] : null;
-				if ($entry && !empty($entry['file'])) {
-					wp_enqueue_script(
-						'stats-block-progressbar',
-						get_template_directory_uri() . '/dist/' . $entry['file'],
-						array(),
-						$entry['file'],
-						true
-					);
-				}
+				$theme_uri = get_template_directory_uri();
+				// Load ProgressBar.js UMD (no bundling = no global conflicts)
+				wp_enqueue_script(
+					'progressbar-js',
+					$theme_uri . '/resources/js/vendor/progressbar.js',
+					array(),
+					'1.1.1',
+					true
+				);
+				wp_enqueue_script(
+					'stats-block-progressbar',
+					$theme_uri . '/resources/js/stats-block-init.js',
+					array('progressbar-js'),
+					'1.0.0',
+					true
+				);
 			},
 		));
 

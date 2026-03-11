@@ -19,7 +19,6 @@ export default defineConfig(({ command }) => {
             rollupOptions: {
                 input: [
                     'resources/js/app.js',
-                    'resources/js/stats-block.js',
                     'resources/css/app.css',
                     'resources/css/editor-style.css'
                 ],

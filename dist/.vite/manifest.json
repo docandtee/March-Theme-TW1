@@ -1,11 +1,11 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app.jUnme4rd.css",
+    "file": "assets/app.DSr3nU4b.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/editor-style.css": {
-    "file": "assets/editor-style.CYn4yvcn.css",
+    "file": "assets/editor-style.-HtIpWln.css",
     "src": "resources/css/editor-style.css",
     "isEntry": true
   },
@@ -17,12 +17,6 @@
     "file": "assets/app-BZpkL4HJ.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
-  },
-  "resources/js/stats-block.js": {
-    "file": "assets/stats-block-C3qA7RWJ.js",
-    "name": "stats-block",
-    "src": "resources/js/stats-block.js",
     "isEntry": true
   }
 }
