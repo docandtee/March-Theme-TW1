@@ -1,3 +1,5 @@
+import Splide from '@splidejs/splide';
+
 window.addEventListener('load', function () {
     let mainNavigation = document.getElementById('primary-navigation')
     let mainNavigationToggle = document.getElementById('primary-menu-toggle')
@@ -9,8 +11,6 @@ window.addEventListener('load', function () {
         })
     }
 })
-
-import Splide from '@splidejs/splide';
 
 document.addEventListener( 'DOMContentLoaded', function () {
 
@@ -103,6 +103,11 @@ document.addEventListener( 'DOMContentLoaded', function () {
 } );
 
 // Load countimator animated counter //
-$( document ).ready( function() {
-    $('.counter').countimator();
+document.addEventListener('DOMContentLoaded', function() {
+    var counters = document.querySelectorAll('.counter');
+    counters.forEach(function (counter) {
+        if (typeof counter.countimator === 'function') {
+            counter.countimator();
+        }
+    });
 } );
