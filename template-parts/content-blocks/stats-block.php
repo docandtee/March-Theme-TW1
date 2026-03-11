@@ -81,12 +81,34 @@
 											$stats_number = get_sub_field('stats_number');
 											$stats_description = get_sub_field('stats_description');
 											$percentage = get_sub_field('percentage');
+
+											if($stats_number) :
 										?>
-											<div class="stat-item text-center">
-												<?php if($stats_number ) { echo '<div class="stat-number text-4xl font-bold">' .esc_html($stats_number). '</div>'; } ?>
-												<?php if($stats_description ) { echo '<div class="stat-description text-gray-700">' .$stats_description. '</div>'; } ?>
+
+											<div class="flex">
+												<?php if($percentage) : ?>
+													<div class="counter counter-wheel position-relative rounded-circle d-flex justify-content-center align-items-center m-auto p-1 border-0 mb-3 percentage"
+														data-style="wheel"
+														data-max="100" 
+														data-value="<?php echo $stats_number; ?>"
+														data-count="0"  
+														data-pad="2">0
+													</div>
+												<?php else : ?>
+													<div class="counter counter-wheel position-relative rounded-circle d-flex justify-content-center align-items-center m-auto p-1 border-0 mb-3" 
+														data-style="wheel"
+														data-max="<?php echo $stats_number; ?>"   
+														data-value="<?php echo $stats_number; ?>"
+														data-count="0"  
+														data-pad="2">0
+													</div>
+												<?php endif; ?>
+
+												<?php if($stats_description ) { echo '<div class="stat-description">' .$stats_description. '</div>'; } ?>
 											</div>
-										<?php endwhile; ?>
+
+										<?php endif; endwhile; ?>
+
 									</div>
 								<?php endif; ?>
 							</div>

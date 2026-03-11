@@ -101,3 +101,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
         } ).mount();
     }
 } );
+
+// Load countimator animated counter //
+$( document ).ready( function() {
+    $('.counter').countimator();
+} );
