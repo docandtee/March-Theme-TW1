@@ -22,8 +22,8 @@
 		
 		<?php if ( $image ): ?>
 			<div class="img-block col-span-12 lg:col-span-6">
-				<div class="relative">
-					<?php docandtee_responsive_image( $image, null, '(min-width: 960px) 50vw, 100vw', 'w-full' ); ?>
+				<div class="relative h-full min-h-64">
+					<?php docandtee_responsive_image( $image, null, '(min-width: 960px) 50vw, 100vw', 'w-full absolute h-full object-cover' ); ?>
 				</div>
 			</div>
 
