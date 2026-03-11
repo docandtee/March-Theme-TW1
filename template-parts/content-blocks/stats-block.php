@@ -24,7 +24,7 @@
 								$remove_bottom_margin = get_field('remove_bottom_margin');
 							?>
 							
-								<div class="accordions">
+								<div class="accordions space-y-0" x-data="{ openAccordion: null }">
 									<?php
 										$hash=rand(1,999999);
 										$counter=1;
