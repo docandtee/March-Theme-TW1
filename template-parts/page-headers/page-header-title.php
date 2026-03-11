@@ -11,8 +11,30 @@
 <div class="container mx-auto my-6 lg:my-20 <?php if( $pagewidth == 'narrow' ) { echo ' max-w-4xl '; } elseif( $pagewidth == 'fullwidth' ) { echo 'max-w-lvw'; } ?>">
 	<div class="hero-content">
 		<header class="<?php if( $text_center  ) { echo 'text-center';} ?>">
-			<h1 class="mb-5 [text-wrap:balance]"><?php the_title(); ?></h1>
-			<?php if( $show_sub_title && $page_header_subtitle ) { echo '<p class="page-subtitle text-lg md:text-xl [text-wrap:balance]">' .esc_html($page_header_subtitle). '</p>'; } ?> 
+			<h1 class="mb-5 [text-wrap:balance] page-header-title-words">
+				<?php
+				$title_words = preg_split('/\s+/u', get_the_title(), -1, PREG_SPLIT_NO_EMPTY);
+				foreach ( $title_words as $i => $word ) {
+					echo '<span class="page-header-word" style="--word-index: ' . (int) $i . '">' . esc_html( $word ) . '</span>';
+					if ( $i < count( $title_words ) - 1 ) {
+						echo ' ';
+					}
+				}
+				?>
+			</h1>
+			<?php
+			if ( $show_sub_title && $page_header_subtitle ) {
+				$subtitle_words = preg_split('/\s+/u', $page_header_subtitle, -1, PREG_SPLIT_NO_EMPTY);
+				echo '<p class="page-subtitle text-lg md:text-xl [text-wrap:balance] page-header-subtitle-words">';
+				foreach ( $subtitle_words as $i => $word ) {
+					echo '<span class="page-header-word" style="--word-index: ' . (int) $i . '">' . esc_html( $word ) . '</span>';
+					if ( $i < count( $subtitle_words ) - 1 ) {
+						echo ' ';
+					}
+				}
+				echo '</p>';
+			}
+			?> 
 			<?php if( $include_a_cta_button && $cta_button_text && $cta_button_link ) { 
 				echo '<div class="button-wrap mt-8 flex"><a class="header-btn flex items-center content-between py-3 px-8 text-lg bg-primary hover:bg-light border-primary text-light hover:text-dark rounded-full !no-underline transition duration-200 ease-in-out text-nowrap focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:outline-none" href="'.esc_url($cta_button_link).'">
 				'.esc_html($cta_button_text).'
