@@ -11,10 +11,6 @@
 
     <?php do_action('tailpress_content_after'); ?>
 
-    <?php if( is_front_page() ) { get_template_part('template-parts/partials/footer-home-news'); } ?>
-
-    <?php get_template_part('template-parts/partials/footer-newsletter'); ?>
-
     <footer id="colophon" class="bg-dark text-white" role="contentinfo">
         <div class="container mx-auto py-5 lg:py-10">
             <?php do_action('tailpress_footer'); ?>
