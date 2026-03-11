@@ -26,7 +26,7 @@
 					$fullheight = get_sub_field('full_height_blocks');
 				?>
 					<li class="splide__slide">
-						<div class="p-6">
+						<div class="p-6 lg:max-w-3xl mx-auto">
 							<?php if( $testimonial ) { 
 									echo '<blockquote class="bg-primary border-0 w-full text-center"><p class="text-light text-2xl italic">'.$testimonial.'</p>'; 
 								if( $citation ) { echo '<cite class="text-light not-italic font-bold mt-4 block">' .$citation. '</cite>'; 
