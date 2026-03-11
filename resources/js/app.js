@@ -60,22 +60,6 @@ document.addEventListener( 'DOMContentLoaded', function () {
             speed: 700,
             interval: 4000,
             autoplay: true,
-            perPage: 3,
-            perMove: 1,
-            breakpoints: {
-                480: {
-                    perPage: 1,
-                },
-                782: {
-                    perPage: 1,
-                },
-                960: {
-                    perPage: 2,
-                },
-                1280: {
-                    perPage: 3,
-                },
-            },
         } ).mount();
     }
 
