@@ -54,7 +54,7 @@
 													:class="openAccordion === <?php echo $counter-1; ?> ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'"
 												>
 													<div class="px-6 py-4">
-														<div class="text-white max-w-none">
+														<div class="max-w-none">
 															<?php echo $accordion_text; ?>
 														</div>
 													</div>
