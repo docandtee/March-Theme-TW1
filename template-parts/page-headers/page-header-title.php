@@ -8,7 +8,7 @@
 <div class="container mx-auto my-6 lg:my-20">
 	<div class="hero-content max-w-4xl">
 		<header class="">
-			<h1 class="mb-5 [text-wrap:balance] page-header-title-words leading-[1.2]">
+			<h1 class="mb-5 [text-wrap:balance] page-header-title-words">
 				<?php
 				$title_words = preg_split('/\s+/u', get_the_title(), -1, PREG_SPLIT_NO_EMPTY);
 				foreach ( $title_words as $i => $word ) {
