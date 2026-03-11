@@ -5,7 +5,7 @@
 	$remove_bottom_margin = get_field('remove_bottom_margin');
 ?>
    
-<section class="staggered-block <?php if(!$remove_bottom_margin) { echo ' section-m-b '; } if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
+<section class="staggered-block m-0! <?php if(!$remove_bottom_margin) { echo ' section-m-b '; } if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
 
 	<?php while( have_rows('content_block') ): the_row(); ?>
 	
@@ -22,7 +22,7 @@
 		
 		<?php if ( $image ): ?>
 			<div class="img-block col-span-12 lg:col-span-6">
-				<div class="relative h-full min-h-64">
+				<div class="relative h-full min-h-128">
 					<?php docandtee_responsive_image( $image, null, '(min-width: 960px) 50vw, 100vw', 'w-full absolute h-full object-cover' ); ?>
 				</div>
 			</div>
