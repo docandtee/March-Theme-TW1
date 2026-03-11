@@ -201,13 +201,22 @@ h4 {
   color: var(--color-primary);
 }
 
-@media (min-width: 960px) {
-  .staggered-block {
+
+.staggered-block {
+  @media (min-width: 960px) {
     .grid-flow-row:nth-child(2n) {
       .img-block {
         order: 2;
       }
     }
+  }
+  .grid-flow-row:nth-child(2), .grid-flow-row:nth-child(5) {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+  .grid-flow-row:nth-child(3), .grid-flow-row:nth-child(6) {
+    background-color: var(--color-dark);
+    color: var(--color-light);
   }
 }
 
