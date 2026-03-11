@@ -1,11 +1,11 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app.Bhl56uIy.css",
+    "file": "assets/app.jUnme4rd.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/css/editor-style.css": {
-    "file": "assets/editor-style.B5SxZ0OZ.css",
+    "file": "assets/editor-style.CYn4yvcn.css",
     "src": "resources/css/editor-style.css",
     "isEntry": true
   },
@@ -14,9 +14,15 @@
     "src": "resources/images/arrows-bg.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DnRQPHhp.js",
+    "file": "assets/app-BZpkL4HJ.js",
     "name": "app",
     "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/stats-block.js": {
+    "file": "assets/stats-block-C3qA7RWJ.js",
+    "name": "stats-block",
+    "src": "resources/js/stats-block.js",
     "isEntry": true
   }
 }

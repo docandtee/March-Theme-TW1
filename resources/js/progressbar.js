@@ -1,1 +1,0 @@
-import ProgressBar from 'progressbar.js';

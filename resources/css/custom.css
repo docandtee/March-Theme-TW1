@@ -355,6 +355,29 @@ h4 {
   }
 }
 
+.stats-circle-wrapper {
+	width: 110px;
+	height: 110px;
+	position: relative;
+}
+
+.stats-circle-wrapper .stats-circle-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.stats-circle-wrapper .stats-circle-container svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.stats-circle-wrapper .stats-circle-value {
+	font-weight: 700;
+	font-size: 1.125rem;
+}
+
 .counter-wheel {
 	width: 110px;
 	height: 110px;

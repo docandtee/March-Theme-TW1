@@ -77,34 +77,26 @@
 								?>
 									<div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-light">
 										<?php
-											while( have_rows('statistics') ): the_row(); 
+											while( have_rows('statistics') ): the_row();
 											$stats_number = get_sub_field('stats_number');
 											$stats_description = get_sub_field('stats_description');
 											$percentage = get_sub_field('percentage');
 
 											if($stats_number) :
+												$is_percentage = !empty($percentage);
 										?>
 
-											<div class="flex">
-												<?php if($percentage) : ?>
-													<div class="counter counter-wheel relative rounded-circle d-flex justify-content-center align-items-center m-auto p-1 border-0 mb-3 percentage"
-														data-style="wheel"
-														data-max="100" 
-														data-value="<?php echo $stats_number; ?>"
-														data-count="0"  
-														data-pad="2">0
-													</div>
-												<?php else : ?>
-													<div class="counter counter-wheel position-relative rounded-circle d-flex justify-content-center align-items-center m-auto p-1 border-0 mb-3" 
-														data-style="wheel"
-														data-max="<?php echo $stats_number; ?>"   
-														data-value="<?php echo $stats_number; ?>"
-														data-count="0"  
-														data-pad="2">0
-													</div>
-												<?php endif; ?>
+											<div class="flex flex-col items-center">
+												<div class="stats-circle-wrapper relative rounded-circle d-flex justify-content-center align-items-center m-auto p-1 border-0 mb-3"
+													data-stats-circle
+													data-value="<?php echo esc_attr( $stats_number ); ?>"
+													data-percentage="<?php echo $is_percentage ? 'true' : 'false'; ?>"
+													aria-hidden="true">
+													<div class="stats-circle-container w-[110px] h-[110px]"></div>
+													<span class="stats-circle-value absolute inset-0 flex items-center justify-center text-lg font-bold pointer-events-none" style="color: var(--color-primary);">0</span>
+												</div>
 
-												<?php if($stats_description ) { echo '<div class="stat-description">' .$stats_description. '</div>'; } ?>
+												<?php if($stats_description) { echo '<div class="stat-description">' . $stats_description . '</div>'; } ?>
 											</div>
 
 										<?php endif; endwhile; ?>
