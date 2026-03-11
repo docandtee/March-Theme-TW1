@@ -92,7 +92,7 @@
 									?>
 
 										<div class="flex flex-col items-center">
-											<div class="stats-circle-wrapper relative rounded-circle d-flex justify-content-center align-items-center m-auto p-1 border-0 mb-3"
+											<div class="stats-circle-wrapper p-1 mb-3"
 												data-stats-circle
 												data-value="<?php echo esc_attr( $stats_number ); ?>"
 												data-percentage="<?php echo $is_percentage ? 'true' : 'false'; ?>"
@@ -101,7 +101,7 @@
 												<span class="stats-circle-value absolute inset-0 flex items-center justify-center text-lg font-bold pointer-events-none" style="color: var(--color-primary);">0</span>
 											</div>
 
-											<?php if($stats_description) { echo '<div class="stat-description">' . $stats_description . '</div>'; } ?>
+											<?php if($stats_description) { echo '<div class="stat-description text-center">' . $stats_description . '</div>'; } ?>
 										</div>
 
 									<?php endif; endwhile; ?>

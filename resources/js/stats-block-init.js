@@ -26,7 +26,7 @@
 
       var bar = new window.ProgressBar.Circle(circleEl, {
         color: 'var(--color-primary)',
-        trailColor: 'var(--color-light)',
+        trailColor: 'var(--color-dark)',
         trailWidth: 4,
         strokeWidth: 6,
         duration: 1600,
