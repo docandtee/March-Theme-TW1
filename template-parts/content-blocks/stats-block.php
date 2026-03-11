@@ -87,7 +87,7 @@
 
 											<div class="flex">
 												<?php if($percentage) : ?>
-													<div class="counter counter-wheel position-relative rounded-circle d-flex justify-content-center align-items-center m-auto p-1 border-0 mb-3 percentage"
+													<div class="counter counter-wheel relative rounded-circle d-flex justify-content-center align-items-center m-auto p-1 border-0 mb-3 percentage"
 														data-style="wheel"
 														data-max="100" 
 														data-value="<?php echo $stats_number; ?>"

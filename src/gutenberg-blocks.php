@@ -130,17 +130,10 @@ function my_acf_init() {
 			'render_template'   => 'template-parts/content-blocks/stats-block.php',
 			'enqueue_assets'    => function() {
 				wp_enqueue_script(
-					'countimator',
-					get_template_directory_uri() . '/resources/js/jquery.countimator.min.js',
-					array('jquery'),
-					'14-10-2015',
-					true
-				);
-				wp_enqueue_script(
-					'countimator.wheel',
-					get_template_directory_uri() . '/resources/js/jquery.countimator.wheel.min.js',
-					array('jquery', 'countimator'),
-					'14-10-2015',
+					'ProgressBar',
+					get_template_directory_uri() . '/resources/js/progressbar.js',
+					array(),
+					'1.0.0',
 					true
 				);
 			},
