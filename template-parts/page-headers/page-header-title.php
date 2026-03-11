@@ -8,8 +8,8 @@
 	$text_center = get_field('align_text_centrally');
 	$pagewidth = get_field('page_width');
 ?>
-<div class="container mx-auto my-6 lg:my-20 <?php if( $pagewidth == 'narrow' ) { echo ' max-w-4xl '; } elseif( $pagewidth == 'fullwidth' ) { echo 'max-w-lvw'; } ?>">
-	<div class="hero-content">
+<div class="container mx-auto my-6 lg:my-20">
+	<div class="hero-content max-w-4xl">
 		<header class="<?php if( $text_center  ) { echo 'text-center';} ?>">
 			<h1 class="mb-5 [text-wrap:balance] page-header-title-words">
 				<?php
