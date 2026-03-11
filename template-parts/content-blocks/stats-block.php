@@ -71,6 +71,26 @@
 							
 						<?php elseif( $stats_display == 'statistics' ) : ?>
 
+							<div class="statistics">
+								<?php 
+									if( have_rows('statistics') ): 
+								?>
+									<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+										<?php
+											while( have_rows('statistics') ): the_row(); 
+											$stats_number = get_sub_field('stats_number');
+											$stats_description = get_sub_field('stats_description');
+											$percentage = get_sub_field('percentage');
+										?>
+											<div class="stat-item text-center">
+												<?php if($stats_number ) { echo '<div class="stat-number text-4xl font-bold">' .esc_html($stats_number). '</div>'; } ?>
+												<?php if($stats_description ) { echo '<div class="stat-description text-gray-700">' .$stats_description. '</div>'; } ?>
+											</div>
+										<?php endwhile; ?>
+									</div>
+								<?php endif; ?>
+							</div>
+
 						<?php endif; ?>
 					</div>
 				</div>
