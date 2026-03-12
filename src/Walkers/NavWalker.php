@@ -21,7 +21,7 @@ if (!class_exists('Tailwind_Navwalker')) {
                 'origin-top-left transition ease-out duration-100',
             );
             $class_names = ' class="' . esc_attr(join(' ', $classes)) . '"';
-            $output .= "\n$indent<ul x-show=\"open\" x-transition $class_names @click.away=\"open = false\" x-cloak role=\"menu\">\n";
+            $output .= "\n$indent<ul x-show=\"open\" x-transition $class_names @click.away=\"open = false\" x-cloak role=\"menu\" style=\"display: none;\">\n";
         }
 
         /**
