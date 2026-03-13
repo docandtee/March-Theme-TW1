@@ -5,7 +5,7 @@
 	$cta_button_text = get_field('cta_button_text');
 	$cta_button_link = get_field('cta_button_link');
 ?>
-<div class="container mx-auto my-6 lg:my-20">
+<div class="container mx-auto section-m-t section-m-b">
 	<div class="hero-content max-w-4xl">
 		<header class="">
 			<h1 class="mb-5 [text-wrap:balance] page-header-title-words">
