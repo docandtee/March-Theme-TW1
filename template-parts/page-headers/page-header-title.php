@@ -7,7 +7,7 @@
 ?>
 <div class="container mx-auto section-m-t section-m-b">
 	<div class="hero-content max-w-4xl">
-		<header class="section-m-b">
+		<header class="section-p-b">
 			<h1 class="mb-5 [text-wrap:balance] page-header-title-words">
 				<?php
 				$title_words = preg_split('/\s+/u', get_the_title(), -1, PREG_SPLIT_NO_EMPTY);
