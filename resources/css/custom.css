@@ -398,7 +398,7 @@ h4 {
 }
 
 .page-header-subtitle-words .page-header-word {
-	animation-delay: calc(0.15s + var(--word-index) * 0.05s);
+	animation-delay: calc(0.15s + var(--word-index) * 0.1s);
 }
 
 @keyframes page-header-word-in {
