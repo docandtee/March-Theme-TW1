@@ -53,20 +53,34 @@
     var containers = document.querySelectorAll('.stats-block [data-stats-circle]');
     if (!containers.length) return;
 
+    var hasBeenOutOfView = new WeakSet();
+    var inViewOnLoad = [];
+
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
           var wrapper = entry.target;
           if (wrapper.hasAttribute('data-stats-animated')) return;
-          wrapper.setAttribute('data-stats-animated', 'true');
-          observer.unobserve(wrapper);
-          animateStatsCircle(wrapper);
+
+          if (!entry.isIntersecting) {
+            hasBeenOutOfView.add(wrapper);
+            return;
+          }
+
+          // Animate only when element has *scrolled into* view (was out, now in).
+          // If it's already in view on first check, record it and animate after a delay below.
+          if (hasBeenOutOfView.has(wrapper)) {
+            wrapper.setAttribute('data-stats-animated', 'true');
+            observer.unobserve(wrapper);
+            animateStatsCircle(wrapper);
+          } else {
+            inViewOnLoad.push(wrapper);
+          }
         });
       },
       {
         root: null,
-        rootMargin: '0px 0px -40px 0px',
+        rootMargin: '0px',
         threshold: 0.1,
       }
     );
@@ -74,6 +88,16 @@
     containers.forEach(function (wrapper) {
       observer.observe(wrapper);
     });
+
+    // Elements already in view on load: animate after a short delay so we don't run before paint.
+    setTimeout(function () {
+      inViewOnLoad.forEach(function (wrapper) {
+        if (wrapper.hasAttribute('data-stats-animated')) return;
+        wrapper.setAttribute('data-stats-animated', 'true');
+        observer.unobserve(wrapper);
+        animateStatsCircle(wrapper);
+      });
+    }, 100);
   }
 
   if (document.readyState === 'loading') {

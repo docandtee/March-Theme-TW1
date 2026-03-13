@@ -51,25 +51,48 @@ function initStatsCircles() {
   const containers = document.querySelectorAll('.stats-block [data-stats-circle]');
   if (!containers.length) return;
 
+  const hasBeenOutOfView = new WeakSet();
+  const inViewOnLoad = [];
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
         const wrapper = entry.target;
         if (wrapper.hasAttribute('data-stats-animated')) return;
-        wrapper.setAttribute('data-stats-animated', 'true');
-        observer.unobserve(wrapper);
-        animateStatsCircle(wrapper);
+
+        if (!entry.isIntersecting) {
+          hasBeenOutOfView.add(wrapper);
+          return;
+        }
+
+        // Animate only when element has *scrolled into* view (was out, now in).
+        if (hasBeenOutOfView.has(wrapper)) {
+          wrapper.setAttribute('data-stats-animated', 'true');
+          observer.unobserve(wrapper);
+          animateStatsCircle(wrapper);
+        } else {
+          inViewOnLoad.push(wrapper);
+        }
       });
     },
     {
       root: null,
-      rootMargin: '0px 0px -40px 0px',
+      rootMargin: '0px',
       threshold: 0.1,
     }
   );
 
   containers.forEach((wrapper) => observer.observe(wrapper));
+
+  // Elements already in view on load: animate after a short delay.
+  setTimeout(() => {
+    inViewOnLoad.forEach((wrapper) => {
+      if (wrapper.hasAttribute('data-stats-animated')) return;
+      wrapper.setAttribute('data-stats-animated', 'true');
+      observer.unobserve(wrapper);
+      animateStatsCircle(wrapper);
+    });
+  }, 100);
 }
 
 if (document.readyState === 'loading') {
