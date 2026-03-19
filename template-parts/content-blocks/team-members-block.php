@@ -64,7 +64,7 @@
 									<?php docandtee_responsive_image($member['image'], null, '(min-width: 960px) 20vw, (min-width: 782px) 40vw, 80vw', 'aspect-2/3 w-full object-cover'); ?>
 								<?php endif; ?> 
 								<figcaption class="member-details text-center">
-									<?php if( $member['name'] ) { echo '<h4 class="member-title mt-3 mb-1">' .esc_html($member['name']). '</h4>'; } ?>
+									<?php if( $member['name'] ) { echo '<h3 class="member-title text-xl mt-3 mb-1">' .esc_html($member['name']). '</h3>'; } ?>
 									<?php if( $member['role'] ) { echo '<p class="member-role">' .esc_html($member['role']). '</p>'; } ?>
 									<?php if( $member['linkedin'] ) { echo '<a class="mt-2 text-center w-full block" href="' .esc_html($member['linkedin']). '"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-style m-auto transition duration-200 ease-in-out" aria-hidden="true">
                 <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/>
@@ -105,7 +105,7 @@
 				 x-transition:leave="transition ease-in duration-200"
 				 x-transition:leave-start="opacity-100 scale-100"
 				 x-transition:leave-end="opacity-0 scale-60"
-				 class="relative bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
+				 class="relative bg-white shadow-xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
 				
 				<!-- Modal Header -->
 				<div class="flex items-center justify-between p-6 border-b border-gray-200">
@@ -127,7 +127,7 @@
 					<div x-show="currentMember.image" class="mb-4">
 						<img :src="currentMember.image" 
 							 :alt="currentMember.name" 
-							 class="w-full h-auto rounded-lg object-cover">
+							 class="w-full h-auto object-cover">
 					</div>
 					
 					<div class="" x-html="currentMember.bio"></div>
