@@ -16,7 +16,7 @@
 			</div>
 		<?php endif; ?>
 
-		<div class="flex flex-row justify-center gap-8">
+		<div class="flex flex-row flex-wrap justify-center gap-8">
 
 			<?php 
 				// First pass: collect all data and generate hashes
