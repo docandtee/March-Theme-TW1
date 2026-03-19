@@ -28,13 +28,15 @@
 						$team_member_name = get_sub_field('team_member_name');
 						$team_member_bio = get_sub_field('team_member_bio');
 						$team_member_role = get_sub_field('team_member_role');
+						$linkedin = get_sub_field('linkedin');
 						
 						$team_members[] = array(
 							'hash' => $hash,
 							'image' => $image,
 							'name' => $team_member_name,
 							'bio' => $team_member_bio,
-							'role' => $team_member_role
+							'role' => $team_member_role,
+							'linkedin' => $linkedin
 						);
 					endwhile;
 				}
@@ -59,11 +61,14 @@
 						<figure class="member-inner">
 							<button type="button" class="w-full text-left cursor-pointer bg-transparent border-0 p-0" @click="openModal('<?php echo $member['hash']; ?>')" aria-label="View <?php echo esc_attr($member['name']); ?> profile">
 								<?php if ( $member['image'] ) : ?>
-									<?php docandtee_responsive_image($member['image'], null, '(min-width: 960px) 20vw, (min-width: 782px) 40vw, 80vw', 'aspect-1/1 w-full object-cover rounded-full'); ?>
+									<?php docandtee_responsive_image($member['image'], null, '(min-width: 960px) 20vw, (min-width: 782px) 40vw, 80vw', 'aspect-2/3 w-full object-cover'); ?>
 								<?php endif; ?> 
 								<figcaption class="member-details text-center">
 									<?php if( $member['name'] ) { echo '<h5 class="member-title mt-3 mb-1">' .esc_html($member['name']). '</h5>'; } ?>
 									<?php if( $member['role'] ) { echo '<p class="member-role">' .esc_html($member['role']). '</p>'; } ?>
+									<?php if( $member['linkedin'] ) { echo '<a class="mx-auto mt-3" href="' .esc_html($member['linkedin']). '"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="icon-style transition duration-200 ease-in-out" aria-hidden="true">
+                <path d="M196.3 512L103.4 512L103.4 212.9L196.3 212.9L196.3 512zM149.8 172.1C120.1 172.1 96 147.5 96 117.8C96 103.5 101.7 89.9 111.8 79.8C121.9 69.7 135.6 64 149.8 64C164 64 177.7 69.7 187.8 79.8C197.9 89.9 203.6 103.6 203.6 117.8C203.6 147.5 179.5 172.1 149.8 172.1zM543.9 512L451.2 512L451.2 366.4C451.2 331.7 450.5 287.2 402.9 287.2C354.6 287.2 347.2 324.9 347.2 363.9L347.2 512L254.4 512L254.4 212.9L343.5 212.9L343.5 253.7L344.8 253.7C357.2 230.2 387.5 205.4 432.7 205.4C526.7 205.4 544 267.3 544 347.7L544 512L543.9 512z"/>
+            </svg></a>'; } ?>
 								</figcaption>
 							</button>
 						</figure>
