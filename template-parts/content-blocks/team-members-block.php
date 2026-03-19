@@ -5,7 +5,7 @@
 	$section_header = get_field('section_header');
 ?>
    
-<section class="team-members-block <?php if(!$remove_bottom_margin) { echo ' section-m-b '; } if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Team Members" x-data="teamModal()">
+<section class="team-members-block section-p-t <?php if(!$remove_bottom_margin) { echo ' section-m-b '; } if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Team Members" x-data="teamModal()">
 	<div class="container">
 
 		<?php if($section_header) : ?>
@@ -16,7 +16,7 @@
 			</div>
 		<?php endif; ?>
 
-		<div class="grid grid-flow-row grid-cols-12 gap-8">
+		<div class="grid grid-flow-row grid-cols-12 place-content-center gap-8">
 
 			<?php 
 				// First pass: collect all data and generate hashes
