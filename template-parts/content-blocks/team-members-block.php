@@ -16,7 +16,7 @@
 			</div>
 		<?php endif; ?>
 
-		<div class="grid grid-flow-row grid-cols-12 place-content-center gap-8">
+		<div class="flex flex-row justify-center gap-8">
 
 			<?php 
 				// First pass: collect all data and generate hashes
@@ -45,7 +45,7 @@
 				foreach($team_members as $member):
 			?>
 			
-			<div class="col-span-12 md:col-span-6 lg:col-span-3 flex justify-center">
+			<div class="basis-1/1 md:basis-1/2 lg:basis-1/3 flex justify-center">
 				<div 
 					class="w-full h-full"
 					x-data="{ shown: false }" 
