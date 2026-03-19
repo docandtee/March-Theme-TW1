@@ -9,14 +9,14 @@
 	<div class="container">
 
 		<?php if($section_header) : ?>
-			<div class="grid grid-flow-row grid-cols-12 gap-8">
+			<div class="grid grid-flow-row grid-cols-12">
 				<header class="col-span-12 text-center">
 					<h2 class="section-m-b"><?php echo esc_html($section_header); ?></h2>
 				</header>
 			</div>
 		<?php endif; ?>
 
-		<div class="flex flex-row flex-wrap justify-center gap-8">
+		<div class="flex flex-row flex-wrap justify-center">
 
 			<?php 
 				// First pass: collect all data and generate hashes
@@ -45,14 +45,14 @@
 				foreach($team_members as $member):
 			?>
 			
-			<div class="basis-1/1 md:basis-1/2 lg:basis-1/3 flex justify-center">
+			<div class="basis-1/1 md:basis-1/2 lg:basis-1/4 flex justify-center">
 				<div 
 					class="w-full h-full"
 					x-data="{ shown: false }" 
 					x-intersect.half="shown = true" 
 				>
 					<div 
-						class="w-full h-full flex flex-col"
+						class="w-full h-full flex flex-col p-4"
 						x-show="shown" 
 						x-transition:enter="transition ease-out duration-300"
 						x-transition:enter-start="opacity-0 scale-50"
