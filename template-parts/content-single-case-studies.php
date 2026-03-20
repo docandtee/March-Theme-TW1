@@ -25,7 +25,7 @@
                         <?php if( $section_title ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-4">'.$section_title.'</div>'; } ?>
                         <?php if( $section_copy ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-8">'.$section_copy.'</div>'; } ?>
                     <?php endwhile; ?>
-                <div class="grid grid-flow-row grid-cols-12 gap-8">
+                </div>
             </div>
         </section>
     <?php endif; ?>
