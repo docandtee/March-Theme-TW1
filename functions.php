@@ -70,7 +70,7 @@ $docandtee_includes = [
     'Walkers/NavWalker.php', // Tailwind Nav Walker
     'theme-settings-menu.php',    // Register social links
     'gutenberg-blocks.php',    // Gutenberg blocks support
-    //'cpt.php',    // Custom post types
+    'cpt.php',    // Custom post types
     //'shared-taxonomies.class.php',    // Shared taxonomies
     //'access.php',    // Access controls
 ];
