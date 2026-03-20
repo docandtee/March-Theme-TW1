@@ -16,7 +16,7 @@
     </div>
 
     <?php if( have_rows('case_study_section' )): ?>
-        <section class="bg-white w-full">
+        <section class="bg-white w-full section-p-t section-p-b">
             <div class="container">
                 <div class="grid grid-flow-row grid-cols-12 gap-8">
                     <?php
@@ -24,7 +24,7 @@
                         $section_title = get_sub_field('section_title');
                         $section_copy = get_sub_field('section_copy');
                     ?>
-                        <?php if( $section_title ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-4">'.$section_title.'</div>'; } ?>
+                        <?php if( $section_title ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-4"><h3>'.$section_title.'</h3></div>'; } ?>
                         <?php if( $section_copy ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-8">'.$section_copy.'</div>'; } ?>
                     <?php endwhile; ?>
                 </div>
