@@ -24,7 +24,7 @@
                         $section_title = get_sub_field('section_title');
                         $section_copy = get_sub_field('section_copy');
                     ?>
-                        <?php if( $section_title ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-4"><h4>'.$section_title.'</h4></div>'; } ?>
+                        <?php if( $section_title ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-4"><h3 class="text-xl">'.$section_title.'</h3></div>'; } ?>
                         <?php if( $section_copy ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-8">'.$section_copy.'</div>'; } ?>
                     <?php endwhile; ?>
                 </div>
