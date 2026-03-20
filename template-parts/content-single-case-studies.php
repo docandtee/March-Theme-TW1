@@ -9,8 +9,10 @@
         </figure>
     <?php endif; ?>
 
-    <div class="entry-content mx-auto max-w-3xl mt-10 sm:mt-20 text-dark" role="main">
-        <?php the_content(); ?>
+    <div class="container">
+        <div class="entry-content mx-auto max-w-3xl mt-10 sm:mt-20 text-dark" role="main">
+            <?php the_content(); ?>
+        </div>
     </div>
 
     <?php if( have_rows('case_study_section' )): ?>
