@@ -83,7 +83,7 @@ if (!class_exists('Tailwind_Navwalker')) {
                 $item_output .= 'aria-haspopup="true" ';
                 $item_output .= 'aria-controls="' . esc_attr($submenu_id) . '">';
                 $item_output .= esc_html($title);
-                $item_output .= '<svg class="w-4 h-4 ml-1 text-gray-500 transition-transform duration-200" :class="{\'rotate-180\': open}" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                $item_output .= '<svg class="w-4 h-4 ml-1 text-white transition-transform duration-200" :class="{\'rotate-180\': open}" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>';
                 $item_output .= '</button>';
