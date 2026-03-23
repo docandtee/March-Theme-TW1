@@ -310,6 +310,19 @@ h4 {
   }
 }
 
+.read-more-btn {
+  .arrow {
+    fill: var(--color-dark);
+    height: 1rem;
+  }
+
+  &:hover {
+    .arrow {
+      fill: var(--color-primary) !important;
+    }
+  }
+}
+
 .particles-bg {
   background-color: var(--color-dark);
   background: radial-gradient(ellipse at bottom, var(--color-dark), var(--color-tertiary));

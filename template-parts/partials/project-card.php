@@ -25,7 +25,7 @@
 				<div class="post-excerpt text-sm">
 					<?php the_excerpt(); ?>
 				</div>
-				<a href="<?php the_permalink(); ?>" class="flex items-center justify-between text-dark! hover:text-primary! arrow-btn">Read more
+				<a href="<?php the_permalink(); ?>" class="flex items-center justify-between text-dark! hover:text-primary! read-more-btn">Read more
 					<svg id="Group_14" data-name="Group 14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.666" height="21.496" viewBox="0 0 28.666 21.496" class="arrow ms-2 transition duration-200 ease-in-out">
 						<defs>
 							<clipPath id="clip-path">
