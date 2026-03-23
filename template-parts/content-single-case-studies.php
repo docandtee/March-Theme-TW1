@@ -7,7 +7,7 @@
             <?php endif; ?>
             <div class="absolute inset-0 w-full h-full bg-black opacity-40"></div>
         </div>
-        <div class="relative text-white section-p-t section-p-b">
+        <div class="relative text-white section-p-t section-p-b w-full">
             <div class="container">
                 <header class="mb-3 max-w-3xl">	
                     <h1 id="post-title-<?php the_ID(); ?>" class="mb-5 [text-wrap:balance]"><?php the_title(); ?></h1>
