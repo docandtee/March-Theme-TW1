@@ -4,9 +4,11 @@
     </header>
 
     <?php if(has_post_thumbnail()): ?>
-        <figure class="mt-10! sm:mt-20 mx-auto! max-w-5xl rounded-4xl overflow-hidden">
-            <?php docandtee_responsive_image(null, null, null, 'aspect-16/10 w-full object-cover'); ?>
-        </figure>
+        <section class="page-header relative overflow-hidden hero-height flex items-end justify-center" aria-label="Page header with featured image">
+            <div class="absolute flex justify-center items-center w-full h-full">
+                <?php docandtee_responsive_image(null, null, '100vw', 'w-full h-full object-cover'); ?>
+            </div>
+        </section>
     <?php endif; ?>
 
     <div class="container">
