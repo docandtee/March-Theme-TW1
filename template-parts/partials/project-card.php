@@ -17,15 +17,15 @@
 		<?php endif; ?>
 		<div class="card-body flex flex-col justify-between grow">
 			<div class="card-wrapper">
-				<h4 class="my-3! mt-0 leading-6">
+				<h3 class="mt-3! mb-1 mt-0 leading-6 text-lg">
 					<a href="<?php the_permalink(); ?>" class="no-underline! text-dark! hover:text-primary! transition duration-200" itemprop="url">
 						<?php the_title(); ?>
 					</a>
-				</h4>
-				<div class="post-excerpt text-sm">
+				</h3>
+				<div class="post-excerpt text-sm mb-3">
 					<?php the_excerpt(); ?>
 				</div>
-				<a href="<?php the_permalink(); ?>" class="flex items-center justify-between text-dark! hover:text-primary! no-underline! read-more-btn">Read more
+				<a href="<?php the_permalink(); ?>" class="flex items-center justify-between text-dark! hover:text-primary! no-underline! read-more-btn text-sm">Read more
 					<svg id="Group_14" data-name="Group 14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.666" height="21.496" viewBox="0 0 28.666 21.496" class="arrow ms-2 transition duration-200 ease-in-out">
 						<defs>
 							<clipPath id="clip-path">

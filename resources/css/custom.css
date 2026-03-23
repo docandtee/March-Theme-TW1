@@ -313,7 +313,7 @@ h4 {
 .read-more-btn {
   .arrow {
     fill: var(--color-dark);
-    height: 1rem;
+    height: .75rem;
   }
 
   &:hover {
