@@ -3,6 +3,34 @@
         <header class="container">	
             <h1 id="post-title-<?php the_ID(); ?>" class="mb-5 [text-wrap:balance]"><?php the_title(); ?></h1>
         </header>
+        <?php 
+            $company = get_the_terms( $post->ID, 'company-type' );
+            if ( !empty( $company ) ) {
+                echo '<div class="mb-1">Company type: ';
+                foreach($company as $term) {
+                    echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                }
+                echo '</div>';
+            }
+
+            $sector = get_the_terms( $post->ID, 'sector' );
+            if ( !empty( $sector ) ) {
+                echo '<div class="mb-1">Company type: ';
+                foreach($sector as $term) {
+                    echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                }
+                echo '</div>';
+            }
+
+            $location = get_the_terms( $post->ID, 'location' );
+            if ( !empty( $location ) ) {
+                echo '<div class="mb-1">Company type: ';
+                foreach($location as $term) {
+                    echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                }
+                echo '</div>';
+            }
+        ?>
     </section>
     <?php if(has_post_thumbnail()): ?>
         <section class="page-header relative overflow-hidden hero-height flex items-end justify-center" aria-label="Page header with featured image">
