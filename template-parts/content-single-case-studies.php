@@ -1,37 +1,39 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> aria-labelledby="post-title-<?php the_ID(); ?>">
     <section class="bg-dark text-white section-p-t section-p-b">
         <div class="container">
-            <header class="mb-3">	
+            <header class="mb-3 max-w-3xl">	
                 <h1 id="post-title-<?php the_ID(); ?>" class="mb-5 [text-wrap:balance]"><?php the_title(); ?></h1>
             </header>
-            <?php 
-                $company = get_the_terms( $post->ID, 'company-type' );
-                if ( !empty( $company ) ) {
-                    echo '<div class="mb-1">Company type: ';
-                    foreach($company as $term) {
-                        echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+            <div class="tags max-w-3xl">
+                <?php 
+                    $company = get_the_terms( $post->ID, 'company-type' );
+                    if ( !empty( $company ) ) {
+                        echo '<div class="mb-1">Company type: ';
+                        foreach($company as $term) {
+                            echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                        }
+                        echo '</div>';
                     }
-                    echo '</div>';
-                }
 
-                $sector = get_the_terms( $post->ID, 'sector' );
-                if ( !empty( $sector ) ) {
-                    echo '<div class="mb-1">Company type: ';
-                    foreach($sector as $term) {
-                        echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                    $sector = get_the_terms( $post->ID, 'sector' );
+                    if ( !empty( $sector ) ) {
+                        echo '<div class="mb-1">Company type: ';
+                        foreach($sector as $term) {
+                            echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                        }
+                        echo '</div>';
                     }
-                    echo '</div>';
-                }
 
-                $location = get_the_terms( $post->ID, 'location' );
-                if ( !empty( $location ) ) {
-                    echo '<div class="mb-1">Company type: ';
-                    foreach($location as $term) {
-                        echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                    $location = get_the_terms( $post->ID, 'location' );
+                    if ( !empty( $location ) ) {
+                        echo '<div class="mb-1">Company type: ';
+                        foreach($location as $term) {
+                            echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                        }
+                        echo '</div>';
                     }
-                    echo '</div>';
-                }
-            ?>
+                ?>
+            </div>
         </div>
     </section>
     <?php if(has_post_thumbnail()): ?>
@@ -43,7 +45,7 @@
     <?php endif; ?>
 
     <div class="container">
-        <div class="entry-content mx-auto max-w-3xl mt-10 sm:mt-20 text-dark" role="main">
+        <div class="entry-content max-w-3xl section-p-t section-p-b text-dark" role="main">
             <?php the_content(); ?>
         </div>
     </div>
