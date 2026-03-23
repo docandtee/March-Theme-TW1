@@ -12,7 +12,7 @@
 	>
 		<?php if (has_post_thumbnail()) : ?>
 			<a href="<?php the_permalink(); ?>" aria-label="<?php echo esc_attr( get_the_title() ); ?> - Featured image" itemprop="url" class="overflow-hidden relative">
-				<?php docandtee_responsive_image(null, null, '(min-width: 960px) 20vw, (min-width: 782px) 30vw, 80vw', 'aspect-4/6 w-full'); ?>
+				<?php docandtee_responsive_image(null, null, '(min-width: 960px) 20vw, (min-width: 782px) 30vw, 80vw', 'aspect-5/6 w-full'); ?>
 			</a>
 		<?php endif; ?>
 		<div class="card-body flex flex-col justify-between grow">
