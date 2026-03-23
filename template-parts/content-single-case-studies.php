@@ -18,7 +18,7 @@
                         if ( !empty( $company ) ) {
                             echo '<div class="mb-1">Company type: ';
                             foreach($company as $term) {
-                                echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                                echo '<span class="text-bold '.$term->slug.'">'.$term->name.'</span>';
                             }
                             echo '</div>';
                         }
@@ -27,7 +27,7 @@
                         if ( !empty( $sector ) ) {
                             echo '<div class="mb-1">Company type: ';
                             foreach($sector as $term) {
-                                echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                                echo '<span class="text-bold '.$term->slug.'">'.$term->name.'</span>';
                             }
                             echo '</div>';
                         }
@@ -36,7 +36,7 @@
                         if ( !empty( $location ) ) {
                             echo '<div class="mb-1">Company type: ';
                             foreach($location as $term) {
-                                echo '<span class=" '.$term->slug.'">'.$term->name.'</span>';
+                                echo '<span class="text-bold '.$term->slug.'">'.$term->name.'</span>';
                             }
                             echo '</div>';
                         }
