@@ -44,11 +44,14 @@
         </section>
     <?php endif; ?>
 
-    <div class="container">
-        <div class="entry-content max-w-3xl py-6 text-dark" role="main">
-            <?php the_content(); ?>
+    <?php if ($post->post_content == '') : ?>
+    <?php else : ?>
+        <div class="container">
+            <div class="entry-content max-w-3xl py-6 text-dark" role="main">
+                <?php the_content(); ?>
+            </div>
         </div>
-    </div>
+    <?php endif; ?>
 
     <?php if( have_rows('case_study_section' )): ?>
         <section class="bg-white w-full section-p-t section-p-b">
