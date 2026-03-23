@@ -45,7 +45,7 @@
     <?php endif; ?>
 
     <div class="container">
-        <div class="entry-content max-w-3xl section-p-t section-p-b text-dark" role="main">
+        <div class="entry-content max-w-3xl py-6 text-dark" role="main">
             <?php the_content(); ?>
         </div>
     </div>
