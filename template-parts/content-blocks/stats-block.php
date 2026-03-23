@@ -34,7 +34,7 @@
 											<div class="border-b border-gray-200 last:border-b-0" id="heading-<?php echo $hash.'-'.$counter; ?>">
 												<div>
 													<button 
-														class="w-full py-4 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary transition-colors duration-200 cursor-pointer" 
+														class="w-full py-4 text-left flex justify-between items-center transition-colors duration-200 cursor-pointer" 
 														type="button" 
 														@click="openAccordion = openAccordion === <?php echo $counter; ?> ? null : <?php echo $counter; ?>"
 														:aria-expanded="openAccordion === <?php echo $counter; ?>"
