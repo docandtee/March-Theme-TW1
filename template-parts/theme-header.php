@@ -20,6 +20,7 @@
             if (
                 ! has_post_thumbnail( $post_id )
                 || ( is_single() && get_post_type() === 'post' )
+                || ( is_single() && get_post_type() === 'case-studies' )
                 || is_archive()
             ) { 
                 echo ' relative bg-dark '; 
