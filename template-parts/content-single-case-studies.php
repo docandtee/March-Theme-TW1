@@ -1,20 +1,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> aria-labelledby="post-title-<?php the_ID(); ?>">
-    <div class="container">
-        <header class="section-p-b">
-			<h1 class="mb-5 [text-wrap:balance] page-header-title-words">
-				<?php
-				$title_words = preg_split('/\s+/u', get_the_title(), -1, PREG_SPLIT_NO_EMPTY);
-				foreach ( $title_words as $i => $word ) {
-					echo '<span class="page-header-word" style="--word-index: ' . (int) $i . '">' . esc_html( $word ) . '</span>';
-					if ( $i < count( $title_words ) - 1 ) {
-						echo ' ';
-					}
-				}
-				?>
-			</h1>
+    <section class="bg-dark text-white section-p-t section-p-b">
+        <header class="container">	
+            <h1 id="post-title-<?php the_ID(); ?>" class="mb-5 [text-wrap:balance]"><?php the_title(); ?></h1>
         </header>
-    </div>
-
+    </section>
     <?php if(has_post_thumbnail()): ?>
         <section class="page-header relative overflow-hidden hero-height flex items-end justify-center" aria-label="Page header with featured image">
             <div class="absolute flex justify-center items-center w-full h-full">
