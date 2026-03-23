@@ -9,7 +9,6 @@
 
 	$args = array(
 		'post_type' => $post_type,
-		'cat' => $post_category,
 		'posts_per_page' => $number_of_posts_to_display,
 		'order' => $display_order,
 		'orderby' => $display_order_by,
