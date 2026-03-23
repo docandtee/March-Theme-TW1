@@ -61,9 +61,9 @@
                     $section_title = get_sub_field('section_title');
                     $section_copy = get_sub_field('section_copy');
                 ?>
-                <div class="grid grid-flow-row grid-cols-12 gap-8 border-b-1 border-dark py-8">
+                <div class="grid grid-flow-row grid-cols-12 gap-8 border-b-1 border-tertiary py-8">
                     <?php if( $section_title ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-4"><h3 class="text-xl">'.$section_title.'</h3></div>'; } ?>
-                    <?php if( $section_copy ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-8">'.$section_copy.'</div>'; } ?>
+                    <?php if( $section_copy ) { echo '<div class="col-span-12 md:col-span-6 lg:col-span-6">'.$section_copy.'</div>'; } ?>
                 </div>
                 <?php endwhile; ?>
             </div>
