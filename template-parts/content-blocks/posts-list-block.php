@@ -19,8 +19,8 @@
 
 <section class="fullwidth overflow-hidden bg-light section-p-t section-p-b" aria-label="Posts list content">
 	<div class="container">
-		<?php if( $section_header ) { echo '<h2 class="mb-6">'.esc_html( $section_header ).'</h2>'; } ?>
-		<?php if( $section_copy ) { echo '<div class="mb-6">'.esc_html( $section_copy ).'</div>'; } ?>
+		<?php if( $section_header ) { echo '<h2 class="mb-3 mt-0!">'.esc_html( $section_header ).'</h2>'; } ?>
+		<?php if( $section_copy ) { echo '<div class="section-m-b">'.esc_html( $section_copy ).'</div>'; } ?>
 		<div class="grid grid-flow-row grid-cols-12 gap-8">
 			<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 				<div class="col-span-12 md:col-span-6 lg:col-span-4 flex">
