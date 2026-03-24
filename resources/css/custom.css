@@ -325,7 +325,7 @@ h4 {
 
 .particles-bg {
   background-color: var(--color-dark);
-  background: linear-gradient(to bottom, var(--color-secondary), var(--color-dark));
+  background: linear-gradient(to bottom, var(--color-tertiary), var(--color-dark));
 }
 
 .particle {
