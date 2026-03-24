@@ -98,7 +98,7 @@
 												data-percentage="<?php echo $is_percentage ? 'true' : 'false'; ?>"
 												aria-hidden="true">
 												<div class="stats-circle-container w-[110px] h-[110px]"></div>
-												<span class="stats-circle-value absolute inset-0 flex items-center justify-center text-lg font-bold pointer-events-none" style="color: var(--color-primary);">0</span>
+												<span class="stats-circle-value absolute inset-0 flex items-center justify-center text-lg font-bold pointer-events-none" style="color: var(--color-light);">0</span>
 											</div>
 
 											<?php if($stats_description) { echo '<div class="stat-description text-center">' . $stats_description . '</div>'; } ?>
