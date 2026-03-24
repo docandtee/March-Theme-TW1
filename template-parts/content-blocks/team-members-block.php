@@ -172,9 +172,15 @@ function <?php echo esc_attr($team_modal_function); ?>() {
 		
 		openModal(memberId) {
 			if (this.members[memberId]) {
-				this.currentMember = this.members[memberId];
-				this.isOpen = true;
-				document.body.style.overflow = 'hidden'; // Prevent background scrolling
+				// clear previous content first to avoid flashing stale data
+				this.currentMember = { name: '', role: '', bio: '', image: '' };
+				this.isOpen = false;
+
+				setTimeout(() => {
+					this.currentMember = this.members[memberId];
+					this.isOpen = true;
+					document.body.style.overflow = 'hidden'; // Prevent background scrolling
+				}, 15);
 			}
 		},
 		
