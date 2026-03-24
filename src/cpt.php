@@ -20,19 +20,6 @@ function _wp_docandtee_create_post_types() {
 	);
 
 	register_taxonomy(
-		'company-type',
-		[ 'case-studies'],
-		array(
-				'hierarchical' => true,
-				'label' => __( 'Company type', 'docandtee' ),
-				'show_ui' => true,
-				'show_in_rest' => true,
-				'show_admin_column' => true,
-				'rewrite' => array( 'slug' => 'company-type' )
-		)
-	);
-
-	register_taxonomy(
 		'sector',
 		[ 'case-studies'],
 		array(
