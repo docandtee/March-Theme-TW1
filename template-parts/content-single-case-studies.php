@@ -14,15 +14,6 @@
                 </header>
                 <div class="tags max-w-3xl">
                     <?php 
-                        $company = get_the_terms( $post->ID, 'company-type' );
-                        if ( !empty( $company ) ) {
-                            echo '<div class="mb-1">Company type: ';
-                            foreach($company as $term) {
-                                echo '<span class="font-bold '.$term->slug.'">'.$term->name.'</span>';
-                            }
-                            echo '</div>';
-                        }
-
                         $sector = get_the_terms( $post->ID, 'sector' );
                         if ( !empty( $sector ) ) {
                             echo '<div class="mb-1">Company type: ';
