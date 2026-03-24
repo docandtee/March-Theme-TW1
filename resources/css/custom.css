@@ -406,7 +406,7 @@ h4 {
 .page-header-subtitle-words .page-header-word {
 	opacity: 0;
 	filter: blur(0.25em);
-	animation: page-header-word-in 2s ease forwards;
+	animation: page-header-word-in 1.6s ease forwards;
 	animation-delay: calc(var(--word-index) * 0.1s);
 }
 
