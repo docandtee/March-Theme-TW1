@@ -68,15 +68,7 @@ h4 {
 }
 
 .hero-height {
-  height: 30rem;
-
-  @media (min-width: 960px) {
-    height: 35rem;
-  }
-
-  @media (min-width: 1280px) {
-    height: 40rem;
-  }
+  height: 40rem;
 }
 
 .section-p-t {
