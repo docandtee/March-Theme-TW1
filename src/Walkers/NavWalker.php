@@ -17,7 +17,7 @@ if (!class_exists('Tailwind_Navwalker')) {
         {
             $indent = str_repeat("\t", $depth);
             $classes = array(
-                'relative md:absolute left-0 py-1 w-full md:w-48 bg-transparent md:bg-white rounded-md z-50 overflow-hidden',
+                'relative md:absolute left-0 py-1 w-full md:w-48 bg-transparent md:bg-white z-50 overflow-hidden',
                 'origin-top-left transition ease-out duration-100',
             );
             $class_names = ' class="' . esc_attr(join(' ', $classes)) . '"';
