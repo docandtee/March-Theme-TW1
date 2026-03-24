@@ -6,7 +6,7 @@
 ?>
 
 <section 
-	class="testimonial-slider relative overflow-hidden bg-primary m-0! section-p-b section-p-t
+	class="testimonial-slider relative overflow-hidden bg-secondary m-0! section-p-b section-p-t
 	<?php 
 		if( !$remove_bottom_margin ) { echo ' section-m-b '; }
 		if( $fullwidth ) { echo ' fullwidth ';} 
@@ -28,7 +28,7 @@
 					<li class="splide__slide">
 						<div class="p-6 lg:max-w-3xl mx-auto">
 							<?php if( $testimonial ) { 
-									echo '<blockquote class="bg-primary border-0 w-full text-center"><p class="text-light text-2xl italic">'.$testimonial.'</p>'; 
+									echo '<blockquote class="bg-secondary border-0 w-full text-center"><p class="text-light text-2xl italic">'.$testimonial.'</p>'; 
 								if( $citation ) { echo '<cite class="text-light not-italic font-bold mt-4 block">' .$citation. '</cite>'; 
 								}
 								echo '</blockquote>';

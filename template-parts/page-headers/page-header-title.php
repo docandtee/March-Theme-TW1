@@ -33,7 +33,7 @@
 			}
 			?> 
 			<?php if( $include_a_cta_button && $cta_button_text && $cta_button_link ) { 
-				echo '<div class="button-wrap mt-8 flex"><a class="header-btn flex items-center content-between py-3 px-8 text-lg bg-primary hover:bg-light border-primary text-light hover:text-dark rounded-full !no-underline transition duration-200 ease-in-out text-nowrap focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:outline-none" href="'.esc_url($cta_button_link).'">
+				echo '<div class="button-wrap mt-8 flex"><a class="header-btn flex items-center content-between py-3 px-8 text-lg bg-primary hover:bg-secondary border-primary text-light hover:text-dark rounded-full !no-underline transition duration-200 ease-in-out text-nowrap focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:outline-none" href="'.esc_url($cta_button_link).'">
 				'.esc_html($cta_button_text).'
 				<svg id="Group_14" data-name="Group 14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.666" height="21.496" viewBox="0 0 28.666 21.496" class="arrow ms-2 transition duration-200 ease-in-out">
 					<defs>
