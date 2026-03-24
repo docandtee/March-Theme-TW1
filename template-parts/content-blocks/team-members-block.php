@@ -3,9 +3,11 @@
 	$fullwidth = get_field('full_width_blocks');
 	$remove_bottom_margin = get_field('remove_bottom_margin');
 	$section_header = get_field('section_header');
+	$team_modal_function = 'teamModal_' . uniqid();
+	$team_modal_heading_id = 'modal-team-title-' . uniqid();
 ?>
    
-<section class="team-members-block section-p-t <?php if(!$remove_bottom_margin) { echo ' section-m-b '; } if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Team Members" x-data="teamModal()">
+<section class="team-members-block section-p-t <?php if(!$remove_bottom_margin) { echo ' section-m-b '; } if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Team Members" x-data="<?php echo esc_attr($team_modal_function); ?>()">
 	<div class="container">
 
 		<?php if($section_header) : ?>
@@ -88,7 +90,7 @@
 		 style="display: none;"
 		 role="dialog"
 		 aria-modal="true"
-		 aria-labelledby="modal-team-title">
+		 aria-labelledby="<?php echo esc_attr($team_modal_heading_id); ?>">
 		
 		<!-- Backdrop -->
 		<div x-show="isOpen"
@@ -109,7 +111,7 @@
 				
 				<!-- Modal Header -->
 				<div class="flex items-center justify-between p-6 border-b border-gray-200">
-					<h3 id="modal-team-title" class="text-xl font-semibold text-gray-900" x-text="currentMember.name"></h3>
+						<h3 id="<?php echo esc_attr($team_modal_heading_id); ?>" class="text-xl font-semibold text-gray-900" x-text="currentMember.name"></h3>
 					<button type="button" @click="closeModal()" 
 							class="hover:primary transition-colors duration-200 cursor-pointer"
 							aria-label="Close team member profile">
@@ -136,7 +138,7 @@
 </section>
 
 <script>
-function teamModal() {
+function <?php echo esc_attr($team_modal_function); ?>() {
 	return {
 		isOpen: false,
 		currentMember: {
