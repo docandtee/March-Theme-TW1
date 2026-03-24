@@ -128,11 +128,6 @@
 				<div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
 					<h5 class="text-lg font-medium mb-4" x-text="currentMember.role"></h5>
 					<div class="mb-12" x-html="currentMember.bio"></div>
-					<div x-show="currentMember.image" class="">
-						<img :src="currentMember.image" 
-							 :alt="currentMember.name" 
-							 class="w-full h-auto object-cover">
-					</div>
 				</div>
 			</div>
 		</div>
@@ -158,14 +153,11 @@ function <?php echo esc_attr($team_modal_function); ?>() {
 					$name = json_encode($member['name']);
 					$role = json_encode($member['role']);
 					$bio = json_encode($member['bio']);
-					$image_url = $member['image'] ? wp_get_attachment_image_url($member['image'], 'large') : '';
-					$image_encoded = json_encode($image_url);
 					
 					$member_data[] = "'" . $member['hash'] . "': {
 						name: " . $name . ",
 						role: " . $role . ",
 						bio: " . $bio . ",
-						image: " . $image_encoded . "
 					}";
 				}
 				echo implode(',', $member_data);
@@ -175,7 +167,7 @@ function <?php echo esc_attr($team_modal_function); ?>() {
 		openModal(memberId) {
 			if (this.members[memberId]) {
 				// clear previous content first to avoid flashing stale data
-				this.currentMember = { name: '', role: '', bio: '', image: '' };
+				this.currentMember = { name: '', role: '', bio: '' };
 				this.isOpen = false;
 
 				setTimeout(() => {
