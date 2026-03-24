@@ -123,8 +123,8 @@
 				<!-- Modal Body -->
 				<div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
 					<h5 class="text-lg font-medium mb-4" x-text="currentMember.role"></h5>
-					<div class="mb-4" x-html="currentMember.bio"></div>
-					<div x-show="currentMember.image" class="mb-4">
+					<div class="mb-12" x-html="currentMember.bio"></div>
+					<div x-show="currentMember.image" class="">
 						<img :src="currentMember.image" 
 							 :alt="currentMember.name" 
 							 class="w-full h-auto object-cover">
