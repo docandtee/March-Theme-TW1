@@ -16,7 +16,7 @@
                     <?php 
                         $sector = get_the_terms( $post->ID, 'sector' );
                         if ( !empty( $sector ) ) {
-                            echo '<div class="mb-1">Company type: ';
+                            echo '<div class="mb-1">Function: ';
                             foreach($sector as $term) {
                                 echo '<span class="font-bold '.$term->slug.'">'.$term->name.'</span>';
                             }
