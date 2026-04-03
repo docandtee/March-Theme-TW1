@@ -25,7 +25,7 @@
       color: 'var(--color-primary)',
       trailColor: 'var(--color-dark)',
       trailWidth: 4,
-      strokeWidth: 6,
+      strokeWidth: 10,
       duration: 1600,
       easing: 'easeInOut',
       step: function (state, circle) {
