@@ -25,7 +25,7 @@
 
                         $location = get_the_terms( $post->ID, 'location' );
                         if ( !empty( $location ) ) {
-                            echo '<div class="mb-1">Company type: ';
+                            echo '<div class="mb-1">Location: ';
                             foreach($location as $term) {
                                 echo '<span class="font-bold '.$term->slug.'">'.$term->name.'</span>';
                             }
