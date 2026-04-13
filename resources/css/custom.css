@@ -49,23 +49,6 @@ h4 {
   }
 }
 
-@media (min-width: 1280px) {
-  h1 {
-    font-size: var(--text-6xl);
-  }
-
-  h2 {
-    font-size: var(--text-5xl);
-  }
-
-  h3 {
-    font-size: var(--text-4xl);
-  }
-
-  h4 {
-    font-size: var(--text-2xl);
-  }
-}
 
 .hero-height {
   height: 40rem;
