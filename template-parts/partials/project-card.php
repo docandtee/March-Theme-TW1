@@ -18,14 +18,14 @@
 		<div class="card-body flex flex-col justify-between grow">
 			<div class="card-wrapper">
 				<h3 class="mt-3! mb-1 mt-0 leading-6 text-xl">
-					<a href="<?php the_permalink(); ?>" class="no-underline! transition duration-200" itemprop="url">
+					<a href="<?php the_permalink(); ?>" class="no-underline! hover:text-light!transition duration-200" itemprop="url">
 						<?php the_title(); ?>
 					</a>
 				</h3>
 				<div class="post-excerpt text-sm mb-3">
 					<?php the_excerpt(); ?>
 				</div>
-				<a href="<?php the_permalink(); ?>" class="flex items-center justify-between no-underline! read-more-btn text-sm">Read more
+				<a href="<?php the_permalink(); ?>" class="flex items-center justify-between hover:text-light! no-underline! read-more-btn text-sm">Read more
 					<svg id="Group_14" data-name="Group 14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28.666" height="21.496" viewBox="0 0 28.666 21.496" class="arrow ms-2 transition duration-200 ease-in-out">
 						<defs>
 							<clipPath id="clip-path">

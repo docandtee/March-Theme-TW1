@@ -298,13 +298,13 @@ h4 {
 
 .read-more-btn {
   .arrow {
-    fill: var(--color-light);
+    fill: var(--color-primary);
     height: .75rem;
   }
 
   &:hover {
     .arrow {
-      fill: var(--color-primary) !important;
+      fill: var(--color-light) !important;
     }
   }
 }
