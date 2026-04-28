@@ -298,7 +298,7 @@ h4 {
 
 .read-more-btn {
   .arrow {
-    fill: var(--color-dark);
+    fill: var(--color-light);
     height: .75rem;
   }
 
