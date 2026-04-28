@@ -1,7 +1,7 @@
 html {
-  background-color: var(--color-light);
+  background-color: var(--color-dark);
   font-size: 15px;
-  color: var(--color-dark);
+  color: #fff;
   overflow-x: hidden;
 }
 
