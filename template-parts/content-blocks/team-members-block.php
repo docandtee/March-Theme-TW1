@@ -112,7 +112,7 @@
 				 class="relative bg-white shadow-xl max-w-2xl w-full max-h-[90vh] overflow-hidden">
 				
 				<!-- Modal Header -->
-				<div class="flex items-center justify-between p-6 border-b border-gray-200">
+				<div class="flex items-center justify-between p-6 border-b border-gray-200 text-dark">
 						<h3 id="<?php echo esc_attr($team_modal_heading_id); ?>" class="text-xl font-semibold text-gray-900" x-text="currentMember.name"></h3>
 					<button type="button" @click="closeModal()" 
 							class="hover:primary transition-colors duration-200 cursor-pointer"
