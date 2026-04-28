@@ -17,7 +17,7 @@
 	if ( $the_query->have_posts() ) : 
 ?>
 
-<section class="fullwidth overflow-hidden bg-light section-p-t section-p-b" aria-label="Posts list content">
+<section class="fullwidth overflow-hidden section-p-t section-p-b" aria-label="Posts list content">
 	<div class="container">
 		<?php if( $section_header ) { echo '<h2 class="mb-3 mt-0!">'.esc_html( $section_header ).'</h2>'; } ?>
 		<?php if( $section_copy ) { echo '<div class="section-m-b">'.esc_html( $section_copy ).'</div>'; } ?>
