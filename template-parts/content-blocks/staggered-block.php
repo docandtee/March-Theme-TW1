@@ -18,7 +18,7 @@
 			$button_external_link = get_sub_field('button_external_link');
 		?>
 	
-	<div class="grid grid-flow-row grid-cols-12 gap-0 <?php if( $fullheight ) {echo ' vh-100 ';} if( !$fullwidth ) {echo ' section-p-t section-p-b ';}	?>">
+	<div class="grid grid-flow-row grid-cols-12 gap-0 <?php if( $fullheight ) {echo ' vh-100 ';} if( !$fullwidth ) {echo ' section-p-t';}	?>">
 		
 		<?php if ( $image ): ?>
 			<div class="img-block col-span-12 lg:col-span-6">
