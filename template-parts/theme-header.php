@@ -97,6 +97,7 @@
                         </div>
                     <?php endif;?>
 
+                    <?php get_template_part('template-parts/content-blocks/social-media-icons'); ?>
                 </div>
 
             </div>
