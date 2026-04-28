@@ -91,7 +91,7 @@
 											$is_percentage = !empty($percentage);
 									?>
 
-										<div class="flex flex-col items-center">
+										<div class="flex flex-col items-center border-t-3 border-primary pt-6">
 											<div class="stats-circle-wrapper p-1 mb-3"
 												data-stats-circle
 												data-value="<?php echo esc_attr( $stats_number ); ?>"
