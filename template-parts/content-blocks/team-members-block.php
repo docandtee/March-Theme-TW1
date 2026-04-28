@@ -126,8 +126,8 @@
 				
 				<!-- Modal Body -->
 				<div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
-					<h5 class="text-lg font-medium mb-4" x-text="currentMember.role"></h5>
-					<div class="mb-12" x-html="currentMember.bio"></div>
+					<h5 class="text-lg font-medium mb-4 text-dark" x-text="currentMember.role"></h5>
+					<div class="mb-12" x-html="currentMember.bio text-dark"></div>
 				</div>
 			</div>
 		</div>
