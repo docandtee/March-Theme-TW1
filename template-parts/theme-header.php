@@ -94,10 +94,11 @@
                                 'fallback_cb'     => 'Tailwind_Navwalker::fallback',
                                 'walker'            => new Tailwind_Navwalker,
                             ) ); ?>
+                            <?php get_template_part('template-parts/content-blocks/social-media-icons'); ?>
                         </div>
                     <?php endif;?>
 
-                    <?php get_template_part('template-parts/content-blocks/social-media-icons'); ?>
+                    
                 </div>
 
             </div>
