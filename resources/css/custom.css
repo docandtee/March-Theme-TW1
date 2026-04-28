@@ -178,7 +178,7 @@ h4 {
 }
 
 
-.staggered-block.fullwidth {
+.staggered-block {
   @media (min-width: 960px) {
     .grid-flow-row:nth-child(2n) {
       .img-block {
@@ -186,24 +186,28 @@ h4 {
       }
     }
   }
-  .grid-flow-row:nth-child(2), .grid-flow-row:nth-child(5) {
-    background-color: var(--color-primary);
-    color: #fff;
 
-    .staggered-btn {
-      background-color: var(--color-light) !important;
-      color: var(--color-dark) !important;
+  &.fullwidth {
 
-      &:hover { 
-        background-color: var(--color-dark) !important;
-        color: var(--color-light) !important;
-      } 
+    .grid-flow-row:nth-child(2), .grid-flow-row:nth-child(5) {
+      background-color: var(--color-primary);
+      color: #fff;
+
+      .staggered-btn {
+        background-color: var(--color-light) !important;
+        color: var(--color-dark) !important;
+
+        &:hover { 
+          background-color: var(--color-dark) !important;
+          color: var(--color-light) !important;
+        } 
+      }
     }
-  }
-  
-  .grid-flow-row:nth-child(3), .grid-flow-row:nth-child(6) {
-    background-color: var(--color-light);
-    color: var(--color-dark);
+    
+    .grid-flow-row:nth-child(3), .grid-flow-row:nth-child(6) {
+      background-color: var(--color-light);
+      color: var(--color-dark);
+    }
   }
 }
 
