@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> aria-labelledby="post-title-<?php the_ID(); ?>">   
     
     <section class="page-header relative overflow-hidden hero-height flex items-end justify-center" aria-label="Page header with featured image">
-        <div class="absolute flex justify-center items-center w-full h-full">
+        <div class="fixed flex justify-center items-center w-full h-full">
             <?php if(has_post_thumbnail()): ?>
                 <?php docandtee_responsive_image(null, null, '100vw', 'w-full h-full object-cover'); ?>
             <?php endif; ?>
@@ -47,7 +47,7 @@
     <?php endif; ?>
 
     <?php if( have_rows('case_study_section' )): ?>
-        <section class="w-full section-p-t section-p-b">
+        <section class="w-full section-p-t section-p-b bg-dark relative">
             <div class="container">
                 <?php
                     while( have_rows('case_study_section') ): the_row(); 
