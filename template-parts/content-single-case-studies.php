@@ -7,7 +7,7 @@
             <?php endif; ?>
             <div class="absolute inset-0 w-full h-full bg-black opacity-40"></div>
         </div>
-        <div class="relative text-white section-p-t section-p-b w-full">
+        <div class="relative section-p-t section-p-b w-full">
             <div class="container">
                 <header class="mb-3 max-w-3xl">	
                     <h1 id="post-title-<?php the_ID(); ?>" class="mb-5 [text-wrap:balance]"><?php the_title(); ?></h1>
@@ -40,14 +40,14 @@
     <?php if ($post->post_content == '') : ?>
     <?php else : ?>
         <div class="container">
-            <div class="entry-content max-w-3xl py-6 text-dark" role="main">
+            <div class="entry-content max-w-3xl py-6" role="main">
                 <?php the_content(); ?>
             </div>
         </div>
     <?php endif; ?>
 
     <?php if( have_rows('case_study_section' )): ?>
-        <section class="bg-white w-full section-p-t section-p-b">
+        <section class="w-full section-p-t section-p-b">
             <div class="container">
                 <?php
                     while( have_rows('case_study_section') ): the_row(); 
