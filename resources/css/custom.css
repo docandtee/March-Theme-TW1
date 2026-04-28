@@ -202,8 +202,8 @@ h4 {
   }
   
   .grid-flow-row:nth-child(3), .grid-flow-row:nth-child(6) {
-    background-color: var(--color-dark);
-    color: var(--color-light);
+    background-color: var(--color-light);
+    color: var(--color-dark);
   }
 }
 
