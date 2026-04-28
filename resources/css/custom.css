@@ -178,7 +178,7 @@ h4 {
 }
 
 
-.staggered-block {
+.staggered-block:not(.fullwidth) {
   @media (min-width: 960px) {
     .grid-flow-row:nth-child(2n) {
       .img-block {
