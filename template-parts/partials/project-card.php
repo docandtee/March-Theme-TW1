@@ -18,7 +18,7 @@
 		<div class="card-body flex flex-col justify-between grow">
 			<div class="card-wrapper">
 				<h3 class="mt-3! mb-1 mt-0 leading-6 text-xl">
-					<a href="<?php the_permalink(); ?>" class="no-underline! text-dark! hover:text-primary! transition duration-200" itemprop="url">
+					<a href="<?php the_permalink(); ?>" class="no-underline! transition duration-200" itemprop="url">
 						<?php the_title(); ?>
 					</a>
 				</h3>
