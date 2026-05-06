@@ -110,7 +110,7 @@
 
 										<div class="flex flex-col items-center border-t-3 border-primary p-8 bg-tertiary">
 											<div 
-												class="w-full h-full impact-stat-block"
+												class="impact-stat-block"
 												x-data='impactStatCounter(<?php echo esc_attr($counter_config_json); ?>)' 
 												x-intersect.threshold.50="shown = true; startCounter()" 
 												x-intersect:leave="shown = false"
