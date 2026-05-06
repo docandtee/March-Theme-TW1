@@ -116,7 +116,7 @@
 												x-intersect:leave="shown = false"
 											>
 												<div 
-													class="p-2 text-3xl font-bold text-center"
+													class="p-2 text-4xl font-bold text-center"
 													x-show="shown" 
 													x-transition:enter="transition ease-out duration-300"
 													x-transition:enter-start="opacity-0 scale-50"
