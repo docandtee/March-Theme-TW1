@@ -108,29 +108,27 @@
 										);
 									?>
 
-										<div class="flex flex-col items-center border-t-3 border-primary pt-6">
-											<div class="p-1 mb-3">
+										<div class="flex flex-col items-center border-t-3 border-primary p-8 bg-tertiary">
+											<div 
+												class="w-full h-full impact-stat-block"
+												x-data='impactStatCounter(<?php echo esc_attr($counter_config_json); ?>)' 
+												x-intersect.threshold.50="shown = true; startCounter()" 
+												x-intersect:leave="shown = false"
+											>
 												<div 
-													class="w-full h-full impact-stat-block"
-													x-data='impactStatCounter(<?php echo esc_attr($counter_config_json); ?>)' 
-													x-intersect.threshold.50="shown = true; startCounter()" 
-													x-intersect:leave="shown = false"
+													class="p-2 text-3xl font-bold text-center"
+													x-show="shown" 
+													x-transition:enter="transition ease-out duration-300"
+													x-transition:enter-start="opacity-0 scale-50"
+													x-transition:enter-end="opacity-100 scale-100"
+													x-transition:leave="transition ease-in duration-300"
+													x-transition:leave-start="opacity-100 scale-100"
+													x-transition:leave-end="opacity-0 scale-90"
 												>
-													<div 
-														class="w-full h-full flex flex-col p-2 text-3xl font-bold items-center justify-center"
-														x-show="shown" 
-														x-transition:enter="transition ease-out duration-300"
-														x-transition:enter-start="opacity-0 scale-50"
-														x-transition:enter-end="opacity-100 scale-100"
-														x-transition:leave="transition ease-in duration-300"
-														x-transition:leave-start="opacity-100 scale-100"
-														x-transition:leave-end="opacity-0 scale-90"
-													>
-													<?php if( $stats_number )  {
-														echo '<span x-text="valueDisplay"></span>';
-														if( $percentage ) { echo '<span class="percentage-symbol">%</span>'; }
-													} ?>
-													</div>
+												<?php if( $stats_number )  {
+													echo '<span x-text="valueDisplay"></span>';
+													if( $percentage ) { echo '<span class="percentage-symbol">%</span>'; }
+												} ?>
 												</div>
 											</div>
 
