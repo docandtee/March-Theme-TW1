@@ -117,7 +117,7 @@
 													x-intersect:leave="shown = false"
 												>
 													<div 
-														class="w-full h-full flex flex-col p-2"
+														class="w-full h-full flex flex-col p-2 text-3xl font-bold items-center justify-center"
 														x-show="shown" 
 														x-transition:enter="transition ease-out duration-300"
 														x-transition:enter-start="opacity-0 scale-50"
