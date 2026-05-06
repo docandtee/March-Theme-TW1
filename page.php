@@ -11,7 +11,7 @@ get_header();
 
     <?php if (have_posts()): ?>
         <?php get_template_part('template-parts/page-headers/page-header'); ?>
-        <section class="section-p-t section-p-b bg-dark relative
+        <section class="bg-dark relative
             <?php 
             $pagewidth = get_field('page_width');
             $remove_top_padding = get_field('remove_top_padding');
