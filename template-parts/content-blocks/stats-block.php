@@ -86,25 +86,58 @@
 										$stats_number = get_sub_field('stats_number');
 										$stats_description = get_sub_field('stats_description');
 										$percentage = get_sub_field('percentage');
-
-										if($stats_number) :
-											$is_percentage = !empty($percentage);
+										$stats_figure_string = is_scalar($stats_number) ? (string) $stats_number : '';
+										$numeric_candidate = preg_replace('/[^0-9.\-]/', '', $stats_figure_string);
+										$target_number = is_numeric($numeric_candidate) ? (float) $numeric_candidate : null;
+										$decimal_places = 0;
+										if (null !== $target_number && str_contains((string) $numeric_candidate, '.')) {
+											$decimal_parts = explode('.', (string) $numeric_candidate);
+											$decimal_places = isset($decimal_parts[1]) ? strlen($decimal_parts[1]) : 0;
+										}
+										$stats_figure_fallback_json = wp_json_encode(
+											$stats_figure_string,
+											JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
+										);
+										$counter_config_json = wp_json_encode(
+											array(
+												'target' => $target_number,
+												'decimals' => $decimal_places,
+												'fallback' => json_decode($stats_figure_fallback_json, true),
+											),
+											JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
+										);
 									?>
 
 										<div class="flex flex-col items-center border-t-3 border-primary pt-6">
-											<div class="stats-circle-wrapper p-1 mb-3"
-												data-stats-circle
-												data-value="<?php echo esc_attr( $stats_number ); ?>"
-												data-percentage="<?php echo $is_percentage ? 'true' : 'false'; ?>"
-												aria-hidden="true">
-												<div class="stats-circle-container w-[110px] h-[110px]"></div>
-												<span class="stats-circle-value absolute inset-0 flex items-center justify-center text-lg font-bold pointer-events-none" style="color: var(--color-light);">0</span>
+											<div class="p-1 mb-3">
+												<div 
+													class="w-full h-full impact-stat-block"
+													x-data='impactStatCounter(<?php echo esc_attr($counter_config_json); ?>)' 
+													x-intersect.threshold.50="shown = true; startCounter()" 
+													x-intersect:leave="shown = false"
+												>
+													<div 
+														class="w-full h-full flex flex-col p-2"
+														x-show="shown" 
+														x-transition:enter="transition ease-out duration-300"
+														x-transition:enter-start="opacity-0 scale-50"
+														x-transition:enter-end="opacity-100 scale-100"
+														x-transition:leave="transition ease-in duration-300"
+														x-transition:leave-start="opacity-100 scale-100"
+														x-transition:leave-end="opacity-0 scale-90"
+													>
+													<?php if( $stats_number )  {
+														echo '<span x-text="valueDisplay"></span>';
+														if( $percentage ) { echo '<span class="percentage-symbol">%</span>'; }
+													} ?>
+													</div>
+												</div>
 											</div>
 
 											<?php if($stats_description) { echo '<div class="stat-description text-center">' . $stats_description . '</div>'; } ?>
 										</div>
 
-									<?php endif; endwhile; ?>
+									<?php endwhile; ?>
 
 								</div>
 							</div>
@@ -117,5 +150,47 @@
 
 		</div>
 	</section>
+
+	<script>
+		if (!window.impactStatCounter) {
+			window.impactStatCounter = function impactStatCounter(config) {
+				return {
+					shown: false,
+					hasAnimated: false,
+					target: config && typeof config.target === "number" ? config.target : null,
+					duration: 1400,
+					decimals: config && typeof config.decimals === "number" ? config.decimals : 0,
+					fallback: config && typeof config.fallback === "string" ? config.fallback : "",
+					value: 0,
+					get valueDisplay() {
+						if (this.target === null) return this.fallback;
+						return this.value.toLocaleString(undefined, {
+							minimumFractionDigits: this.decimals,
+							maximumFractionDigits: this.decimals
+						});
+					},
+					startCounter() {
+						if (this.hasAnimated || this.target === null) return;
+						this.hasAnimated = true;
+						const start = 0;
+						const end = this.target;
+						const duration = this.duration;
+						const startedAt = performance.now();
+						const tick = (now) => {
+							const progress = Math.min((now - startedAt) / duration, 1);
+							const eased = 1 - Math.pow(1 - progress, 3);
+							this.value = start + ((end - start) * eased);
+							if (progress < 1) {
+								requestAnimationFrame(tick);
+								return;
+							}
+							this.value = end;
+						};
+						requestAnimationFrame(tick);
+					}
+				};
+			};
+		}
+	</script>
 
 <?php endif; ?>
