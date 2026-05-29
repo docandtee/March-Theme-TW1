@@ -3,7 +3,7 @@
 	$fullwidth = get_field('full_width_blocks');
 ?>
    
-	<section class="stats-block m-0! <?php if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
+	<section class="stats-block m-0! <?php if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden section-p-t section-p-b" aria-label="Staggered content">
 		<div class="grid grid-flow-row grid-cols-12 gap-0">
 
 			<?php while( have_rows('stats_block') ): the_row();
@@ -15,7 +15,7 @@
 			?>
 			
 				<div class="text-block col-span-12 bg-secondary">
-					<div class="content-inner p-8 lg:p-20 w-full lg:h-full">
+					<div class="content-inner">
 						<?php if( $block_title ) { echo '<h3 class="block-bottom mb-6 mt-0!">' .esc_html($block_title). '</h3>'; } ?>
 						<?php if( $block_text ) { echo '<div class="copy-wrap">' .$block_text. '</div>'; } ?>
 
@@ -74,7 +74,7 @@
 			<?php elseif( $stats_display == 'statistics' ) : ?>
 
 				<div class="text-block col-span-12 bg-dark text-white">
-					<div class="content-inner p-8 lg:p-20 w-full lg:h-full">
+					<div class="content-inner">
 						<?php if( $block_title ) { echo '<h3 class="block-bottom mb-6 mt-0!">' .esc_html($block_title). '</h3>'; } ?>
 						<?php if( $block_text ) { echo '<div class="copy-wrap">' .$block_text. '</div>'; } ?>
 							
