@@ -31,7 +31,7 @@
 	
 		<div class="text-block col-span-12 lg:col-span-6 flex flex-col justify-center">
 			<div class="content-inner p-8 md:p-16">
-				<?php if( $block_title ) { echo '<h3 class="block-bottom mb-4 mt-0!">' .esc_html($block_title). '</h3>'; } ?>
+				<?php if( $block_title ) { echo '<h2 class="block-bottom mb-4 mt-0!">' .esc_html($block_title). '</h2>'; } ?>
 				<?php if( $block_text ) { echo '<div class="copy-wrap">' .$block_text. '</div>'; } ?>
 				<?php if( $button_link && $button_text ) {
 					echo '
