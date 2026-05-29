@@ -30,7 +30,7 @@
 						echo '<h3 class="mb-0">' . esc_html($column_title) . '</h3>';
 					} ?>
 					<?php if($column_subtitle) {
-						echo '<p class="mb-0 text-tertiary>' . esc_html($column_subtitle) . '</p>';
+						echo '<p class="mb-0 text-tertiary">' . esc_html($column_subtitle) . '</p>';
 					} ?>
 					<?php if($column_copy) {
 						echo '<div class="copy">' . $column_copy . '</div>';
