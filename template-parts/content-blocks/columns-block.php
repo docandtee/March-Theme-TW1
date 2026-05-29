@@ -24,7 +24,7 @@
 			?>
 				<div class="col-span-12 md:col-span-6 <?php echo esc_attr($number_of_columns); ?> mb-4 md:mb-0 border-t-6 border-primary p-6
 					<?php 
-						if (in_array($background_colour, ['bg-light', 'bg-tertiary'])) {
+						if (in_array($background_colour, ['bg-light', 'bg-tertiary', 'bg-secondary'])) {
 							echo 'bg-dark';
 						} else {
 							echo 'bg-secondary';
