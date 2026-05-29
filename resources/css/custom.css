@@ -211,7 +211,6 @@ h4 {
   }
 
   .copy-wrap > *:not(h4) {
-    margin-top: --spacing(6);
     margin-bottom: --spacing(6);
   }
 }
