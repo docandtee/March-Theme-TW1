@@ -1,32 +1,43 @@
 <?php
-	$remove_bottom_margin = get_field('remove_bottom_margin');
-	$fullwidth = get_field('full_width_blocks');
-	$section_header = get_field('section_header');
-	$related_pages = get_field('related_pages');
-	if( $related_pages ): 
+	$background_colour = get_field('background_colour');
+	$section_heading = get_field('section_heading');
+	$section_copy = get_field('section_copy');
+	$number_of_columns = get_field('number_of_columns');
+	if( have_rows('columns') ): 
 ?>
 
-<section class="<?php if(!$remove_bottom_margin) { echo ' section-m-b '; } ?> <?php if( $fullwidth ) {echo 'fullwidth';} ?> overflow-hidden" aria-label="Related pages content">
+<section class="<?php echo esc_attr($background_colour); ?> fullwidth overflow-hidden" aria-label="column content">
 	<div class="container">
-		<?php if($section_header) : ?>
-			<div class="grid grid-flow-row grid-cols-12 gap-8">
-				<header class="col-span-12 text-center">
-					<h2 class="section-m-b"><?php echo esc_html($section_header); ?></h2>
-				</header>
-			</div>
-		<?php endif; ?>
-		<div class="grid grid-flow-row grid-cols-12 gap-8">
+		<?php if($section_heading) {
+			echo '<h2 class="section-m-b">' . esc_html($section_heading) . '</h2>';
+		} ?>
+		<?php if($section_copy) {
+			echo '<div class="section-copy">' . esc_html($section_copy) . '</div>';
+		} ?>
+		<div class="grid grid-flow-row grid-cols-12 md:gap-8">
 			<?php 
-			global $post; // Important: declare global before the loop
-			foreach( $related_pages as $post ): 
-				// Setup this post for WP functions (variable must be named $post).
-				setup_postdata($post); 
+				while( have_rows('columns') ): the_row(); 
+				$column_number = get_sub_field('column_number');
+				$column_title = get_sub_field('column_title');
+				$column_subtitle = get_sub_field('column_subtitle');
+				$column_copy = get_sub_field('column_copy');
 			?>
-				<div class="col-span-12 md:col-span-6 lg:col-span-4">
-					<?php get_template_part('template-parts/partials/hover-block'); ?>
+				<div class="col-span-12 md:col-span-6 <?php echo esc_attr($background_colour); ?> mb-4 md:mb-0">
+					<?php if($column_number) {
+						echo '<div class="number text-primary font-bold text-lg mb-2 block">' . esc_html($column_number) . '</div>';
+					} ?>
+					<?php if($column_title) {
+						echo '<h3>' . esc_html($column_title) . '</h3>';
+					} ?>
+					<?php if($column_subtitle) {
+						echo '<p>' . esc_html($column_subtitle) . '</p>';
+					} ?>
+					<?php if($column_copy) {
+						echo '<p>' . esc_html($column_copy) . '</p>';
+					} ?>
 				</div>
-			<?php endforeach; ?>
+			<?php endwhile; ?>
 		</div>
 	</div>
 </section>
-<?php endif; wp_reset_postdata(); ?>
+<?php endif; ?>
