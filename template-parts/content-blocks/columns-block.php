@@ -22,7 +22,15 @@
 				$column_subtitle = get_sub_field('column_subtitle');
 				$column_copy = get_sub_field('column_copy');
 			?>
-				<div class="col-span-12 md:col-span-6 bg-secondary <?php echo esc_attr($number_of_columns); ?> mb-4 md:mb-0 border-t-6 border-primary p-6">
+				<div class="col-span-12 md:col-span-6 <?php echo esc_attr($number_of_columns); ?> mb-4 md:mb-0 border-t-6 border-primary p-6
+					<?php 
+						if (in_array($background_colour, ['bg-light', 'bg-tertiary'])) {
+							echo 'bg-dark text-light';
+						} else {
+							echo 'bg-secondary';
+						}
+					?>
+				">
 					<?php if($column_number) {
 						echo '<div class="number text-primary font-bold text-4xl mb-0 block">' . esc_html($column_number) . '</div>';
 					} ?>
