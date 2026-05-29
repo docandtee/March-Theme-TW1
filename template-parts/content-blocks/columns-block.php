@@ -22,15 +22,7 @@
 				$column_subtitle = get_sub_field('column_subtitle');
 				$column_copy = get_sub_field('column_copy');
 			?>
-				<div class="col-span-12 md:col-span-6 <?php echo esc_attr($number_of_columns); ?> mb-4 md:mb-0 border-t-6 border-primary p-6
-					<?php 
-						if (in_array($background_colour, ['bg-dark'])) {
-							echo 'bg-secondary';
-						} else {
-							echo 'bg-dark';
-						}
-					?>
-				">
+				<div class="col-span-12 md:col-span-6 <?php echo esc_attr($number_of_columns); ?> mb-4 md:mb-0">
 					<div 
 						class="w-full h-full"
 						x-data="{ shown: false }" 
@@ -43,18 +35,28 @@
 							x-transition:enter-start="opacity-0 scale-50"
 							x-transition:enter-end="opacity-100 scale-100"
 						>
-							<?php if($column_number) {
-								echo '<div class="number text-primary font-bold text-4xl mb-0 block">' . esc_html($column_number) . '</div>';
-							} ?>
-							<?php if($column_title) {
-								echo '<h3 class="mb-2 mt-4">' . esc_html($column_title) . '</h3>';
-							} ?>
-							<?php if($column_subtitle) {
-								echo '<p class="mb-0 text-tertiary font-bold">' . esc_html($column_subtitle) . '</p>';
-							} ?>
-							<?php if($column_copy) {
-								echo '<div class="copy mt-6">' . $column_copy . '</div>';
-							} ?>
+							<div class="border-t-6 border-primary p-6
+								<?php 
+									if (in_array($background_colour, ['bg-dark'])) {
+										echo 'bg-secondary';
+									} else {
+										echo 'bg-dark';
+									}
+								?>
+							">
+								<?php if($column_number) {
+									echo '<div class="number text-primary font-bold text-4xl mb-0 block">' . esc_html($column_number) . '</div>';
+								} ?>
+								<?php if($column_title) {
+									echo '<h3 class="mb-2 mt-4">' . esc_html($column_title) . '</h3>';
+								} ?>
+								<?php if($column_subtitle) {
+									echo '<p class="mb-0 text-tertiary font-bold">' . esc_html($column_subtitle) . '</p>';
+								} ?>
+								<?php if($column_copy) {
+									echo '<div class="copy mt-6">' . $column_copy . '</div>';
+								} ?>
+							</div>
 						</div>
 					</div>
 				</div>
