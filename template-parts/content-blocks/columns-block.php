@@ -6,10 +6,10 @@
 	if( have_rows('columns') ): 
 ?>
 
-<section class="<?php echo esc_attr($background_colour); ?> fullwidth overflow-hidden" aria-label="column content">
+<section class="<?php echo esc_attr($background_colour); ?> fullwidth overflow-hidden section-p-t section-p-b" aria-label="column content">
 	<div class="container">
 		<?php if($section_heading) {
-			echo '<h2 class="mb-4">' . esc_html($section_heading) . '</h2>';
+			echo '<h2 class="mb-4 mt-0!">' . esc_html($section_heading) . '</h2>';
 		} ?>
 		<?php if($section_copy) {
 			echo '<div class="section-copy">' . $section_copy . '</div>';
