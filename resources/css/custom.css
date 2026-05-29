@@ -182,15 +182,15 @@ h4 {
 .staggered-block {
   @media (min-width: 960px) {
     .content-inner {
-      padding-right: calc(var(--spacing)*24);
+      padding-left: calc(var(--spacing)*24);
     }
     .grid-flow-row:nth-child(2n) {
       .img-block {
         order: 2;
       }
       .content-inner {
-        padding-left: calc(var(--spacing)*24);
-        padding-right: 0;
+        padding-right: calc(var(--spacing)*24);
+        padding-left: 0;
       }
     }
   }
