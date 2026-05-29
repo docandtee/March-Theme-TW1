@@ -185,11 +185,6 @@ h4 {
         order: 2;
       }
     }
-
-    & > {
-      margin-top: --spacing(6);
-      margin-bottom: --spacing(6);
-    }
   }
 
   &.fullwidth {
@@ -213,6 +208,11 @@ h4 {
       background-color: var(--color-light);
       color: var(--color-dark);
     }
+  }
+
+  & > {
+    margin-top: --spacing(6);
+    margin-bottom: --spacing(6);
   }
 }
 
