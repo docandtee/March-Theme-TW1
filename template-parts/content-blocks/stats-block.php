@@ -14,7 +14,7 @@
 				if( $stats_display == 'accordion' ) :
 			?>
 			
-				<div class="text-block col-span-12 bg-quaternary">
+				<div class="text-block col-span-12 bg-secondary">
 					<div class="content-inner p-8 lg:p-20 w-full lg:h-full">
 						<?php if( $block_title ) { echo '<h3 class="block-bottom mb-6 mt-0!">' .esc_html($block_title). '</h3>'; } ?>
 						<?php if( $block_text ) { echo '<div class="copy-wrap">' .$block_text. '</div>'; } ?>
