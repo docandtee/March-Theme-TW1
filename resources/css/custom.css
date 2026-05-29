@@ -90,7 +90,7 @@ h4 {
 .block-editor-block-list__layout {
 
   :where(
-      .entry-content > *:not(li),
+      & > *:not(li),
       .block-editor-block-list__layout > *:not(li)
     ) {
     margin-top: --spacing(6);
@@ -184,6 +184,11 @@ h4 {
       .img-block {
         order: 2;
       }
+    }
+
+    & > {
+      margin-top: --spacing(6);
+      margin-bottom: --spacing(6);
     }
   }
 
