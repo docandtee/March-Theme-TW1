@@ -33,7 +33,7 @@
 						echo '<p>' . esc_html($column_subtitle) . '</p>';
 					} ?>
 					<?php if($column_copy) {
-						echo '<p>' . esc_html($column_copy) . '</p>';
+						echo '<div class="copy">' . esc_html($column_copy) . '</div>';
 					} ?>
 				</div>
 			<?php endwhile; ?>
