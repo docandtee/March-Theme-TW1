@@ -24,10 +24,10 @@
 			?>
 				<div class="col-span-12 md:col-span-6 bg-secondary <?php echo esc_attr($number_of_columns); ?> mb-4 md:mb-0 border-t-6 border-primary p-4">
 					<?php if($column_number) {
-						echo '<div class="number text-primary font-bold text-2xl mb-2 block">' . esc_html($column_number) . '</div>';
+						echo '<div class="number text-primary font-bold text-4xl mb-0 block">' . esc_html($column_number) . '</div>';
 					} ?>
 					<?php if($column_title) {
-						echo '<h3 class="mb-2">' . esc_html($column_title) . '</h3>';
+						echo '<h3 class="mb-2 mt-4">' . esc_html($column_title) . '</h3>';
 					} ?>
 					<?php if($column_subtitle) {
 						echo '<p class="mb-0 text-tertiary font-bold">' . esc_html($column_subtitle) . '</p>';
