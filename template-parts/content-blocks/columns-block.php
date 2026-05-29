@@ -22,7 +22,7 @@
 				$column_subtitle = get_sub_field('column_subtitle');
 				$column_copy = get_sub_field('column_copy');
 			?>
-				<div class="col-span-12 md:col-span-6 <?php echo esc_attr($background_colour); ?> mb-4 md:mb-0">
+				<div class="col-span-12 md:col-span-6 <?php echo esc_attr($number_of_columns); ?> mb-4 md:mb-0">
 					<?php if($column_number) {
 						echo '<div class="number text-primary font-bold text-lg mb-2 block">' . esc_html($column_number) . '</div>';
 					} ?>
