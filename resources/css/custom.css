@@ -210,7 +210,7 @@ h4 {
     }
   }
 
-  .copy-wrap > {
+  .copy-wrap > * {
     margin-top: --spacing(6);
     margin-bottom: --spacing(6);
   }
