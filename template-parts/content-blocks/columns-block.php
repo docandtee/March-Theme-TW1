@@ -35,7 +35,7 @@
 							x-transition:enter-start="opacity-0 scale-50"
 							x-transition:enter-end="opacity-100 scale-100"
 						>
-							<div class="border-t-6 border-primary p-6
+							<div class="border-t-6 border-primary p-6 w-full h-full
 								<?php 
 									if (in_array($background_colour, ['bg-dark'])) {
 										echo 'bg-secondary';
