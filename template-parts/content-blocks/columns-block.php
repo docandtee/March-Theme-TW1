@@ -31,18 +31,32 @@
 						}
 					?>
 				">
-					<?php if($column_number) {
-						echo '<div class="number text-primary font-bold text-4xl mb-0 block">' . esc_html($column_number) . '</div>';
-					} ?>
-					<?php if($column_title) {
-						echo '<h3 class="mb-2 mt-4">' . esc_html($column_title) . '</h3>';
-					} ?>
-					<?php if($column_subtitle) {
-						echo '<p class="mb-0 text-tertiary font-bold">' . esc_html($column_subtitle) . '</p>';
-					} ?>
-					<?php if($column_copy) {
-						echo '<div class="copy mt-6">' . $column_copy . '</div>';
-					} ?>
+					<div 
+						class="w-full h-full"
+						x-data="{ shown: false }" 
+						x-intersect.half="shown = true" 
+					>
+						<div 
+							class="w-full h-full flex flex-col"
+							x-show="shown" 
+							x-transition:enter="transition ease-out duration-300"
+							x-transition:enter-start="opacity-0 scale-50"
+							x-transition:enter-end="opacity-100 scale-100"
+						>
+							<?php if($column_number) {
+								echo '<div class="number text-primary font-bold text-4xl mb-0 block">' . esc_html($column_number) . '</div>';
+							} ?>
+							<?php if($column_title) {
+								echo '<h3 class="mb-2 mt-4">' . esc_html($column_title) . '</h3>';
+							} ?>
+							<?php if($column_subtitle) {
+								echo '<p class="mb-0 text-tertiary font-bold">' . esc_html($column_subtitle) . '</p>';
+							} ?>
+							<?php if($column_copy) {
+								echo '<div class="copy mt-6">' . $column_copy . '</div>';
+							} ?>
+						</div>
+					</div>
 				</div>
 			<?php endwhile; ?>
 		</div>
