@@ -27,7 +27,7 @@
 						echo '<div class="number text-primary font-bold text-2xl mb-2 block">' . esc_html($column_number) . '</div>';
 					} ?>
 					<?php if($column_title) {
-						echo '<h3 class="mb-0">' . esc_html($column_title) . '</h3>';
+						echo '<h3 class="mb-2">' . esc_html($column_title) . '</h3>';
 					} ?>
 					<?php if($column_subtitle) {
 						echo '<p class="mb-0 text-tertiary font-bold">' . esc_html($column_subtitle) . '</p>';
