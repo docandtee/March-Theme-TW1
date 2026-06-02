@@ -301,13 +301,13 @@ h4 {
 
 .arrow-btn, .header-btn {
   .arrow {
-    fill: var(--color-light);
+    fill: var(--color-dark);
     height: 1rem;
   }
 
   &:hover {
     .arrow {
-      fill: var(--color-dark) !important;
+      fill: var(--color-light) !important;
     }
   }
 }
