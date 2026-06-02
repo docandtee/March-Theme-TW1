@@ -9,9 +9,11 @@
         <?php do_action('tailpress_content_end'); ?>
     </div><!-- #content -->
 
+    <?php get_template_part('template-parts/partials/footer-contact'); ?>
+
     <?php do_action('tailpress_content_after'); ?>
 
-    <footer id="colophon" class="bg-tertiary text-white" role="contentinfo">
+    <footer id="colophon" class="bg-dark" role="contentinfo">
         <div class="container mx-auto py-5 lg:py-10">
             <?php do_action('tailpress_footer'); ?>
             <div class="flex items-center justify-center flex-wrap">
