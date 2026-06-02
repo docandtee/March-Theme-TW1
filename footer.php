@@ -13,8 +13,8 @@
 
     <?php do_action('tailpress_content_after'); ?>
 
-    <footer id="colophon" class="bg-dark border-t-1 border-tertiary section-p-t section-p-b" role="contentinfo">
-        <div class="container mx-auto">
+    <footer id="colophon" class="bg-dark" role="contentinfo">
+        <div class="container border-t-1 border-tertiary section-p-t section-p-b">
             <?php do_action('tailpress_footer'); ?>
             <div class="grid grid-flow-row grid-cols-12">
                 <?php dynamic_sidebar('sidebar-footer'); ?>
