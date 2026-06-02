@@ -10,10 +10,10 @@
     <div class="container">
 
         <?php if($section_heading) {
-            echo '<h2 class="mb-4 mt-0!">' . esc_html($section_heading) . '</h2>';
+            echo '<h2 class="mb-4 mt-0! text-dark">' . esc_html($section_heading) . '</h2>';
         } ?>
         <?php if($section_copy) {
-            echo '<div class="section-copy">' . $section_copy . '</div>';
+            echo '<div class="section-copy text-dark">' . $section_copy . '</div>';
         } ?>
 
         <?php if($show_logos_in_a_slider) : ?>
