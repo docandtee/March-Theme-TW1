@@ -1,11 +1,9 @@
 <?php 
 	if( have_rows('content_block') ): 
 	$fullwidth = get_field('full_width_blocks');
-	$fullheight = get_field('full_height_blocks');
-	$remove_bottom_margin = get_field('remove_bottom_margin');
 ?>
    
-<section class="staggered-block m-0! <?php if(!$remove_bottom_margin) { echo ' section-m-b '; } if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
+<section class="staggered-block mt-0! section-p-t section-p-b <?php if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
 
 	<?php while( have_rows('content_block') ): the_row(); ?>
 	
@@ -18,7 +16,7 @@
 			$button_external_link = get_sub_field('button_external_link');
 		?>
 	
-	<div class="grid grid-flow-row grid-cols-12 gap-0 <?php if( $fullheight ) {echo ' vh-100 ';} if( !$fullwidth ) {echo ' section-p-t';}	?>">
+	<div class="grid grid-flow-row grid-cols-12 gap-0 <?php if( !$fullwidth ) {echo ' section-p-t';} ?>">
 		
 		<?php if ( $image ): ?>
 			<div class="img-block col-span-12 lg:col-span-6">
