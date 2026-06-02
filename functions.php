@@ -164,7 +164,7 @@ add_filter('widget_nav_menu_args', function($args) {
             'walker'            => new Tailwind_Navwalker,
             'container'         => 'nav',
             'container_class'   => 'widget-nav',
-            'menu_class'        => 'nav flex flex-wrap items-center justify-center',
+            'menu_class'        => 'nav',
             'depth'             => 1,
         )
     );
