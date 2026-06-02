@@ -43,7 +43,15 @@
 					);
 				?>
 					<div class="col-span-12 md:col-span-6 <?php echo esc_attr($number_of_columns); ?> mb-4 md:mb-0">
-						<div class="flex flex-col items-center border-t-3 border-primary p-8 bg-tertiary">
+						<div class="border-t-6 border-primary p-6 w-full h-full
+							<?php 
+								if (in_array($background_colour, ['bg-dark'])) {
+									echo 'bg-secondary';
+								} else {
+									echo 'bg-dark';
+								}
+							?>
+						">
 							<div 
 								class="impact-stat-block"
 								x-data='impactStatCounter(<?php echo esc_attr($counter_config_json); ?>)' 
