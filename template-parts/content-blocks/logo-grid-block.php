@@ -5,7 +5,7 @@
     $show_logos_in_a_slider = get_field('show_logos_in_a_slider');
 ?>
 
-<section class="logo-grid fullwidth overflow-hidden bg-white mt-0! section-p-b section-p-t" aria-label="Logo grid">
+<section class="logo-grid fullwidth overflow-hidden bg-light mt-0! section-p-b section-p-t" aria-label="Logo grid">
 
     <div class="container">
 
@@ -13,7 +13,7 @@
             echo '<h2 class="mb-4 mt-0! text-dark">' . esc_html($section_heading) . '</h2>';
         } ?>
         <?php if($section_copy) {
-            echo '<div class="section-copy text-dark">' . $section_copy . '</div>';
+            echo '<div class="section-copy text-dark section-m-b">' . $section_copy . '</div>';
         } ?>
 
         <?php if($show_logos_in_a_slider) : ?>
