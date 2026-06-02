@@ -4,7 +4,7 @@
     $button_text = get_field('button_text', 'option');
     $button_link = get_field('button_link', 'option');
 ?>
-<section class="newsletter-footer w-full overflow-hidden" aria-label="Contact us">
+<section class="contact-footer w-full overflow-hidden relative bg-dark" aria-label="Contact us">
     <div class="container border-t-1 border-tertiary section-p-t section-p-b">
         <div class="max-w-2xl">
         <?php if( $section_heading ) { echo '<h1 class="mb-3">' .esc_html( $section_heading ). '</h1>'; } ?>
