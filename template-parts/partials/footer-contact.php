@@ -6,7 +6,7 @@
 ?>
 <section class="newsletter-footer w-full section-p-b section-p-t overflow-hidden" aria-label="Contact us">
     <div class="container">
-        <div class="w-max-2xl>
+        <div class="max-w-2xl">
         <?php if( $section_heading ) { echo '<h1 class="mb-3">' .esc_html( $section_heading ). '</h1>'; } ?>
         <?php if( $section_copy ) { echo '<div class="text-lg">' .$section_copy. '</div>'; } ?>
         <?php if( $button_link && $button_text ) {
