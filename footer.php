@@ -16,7 +16,7 @@
     <footer id="colophon" class="bg-dark" role="contentinfo">
         <div class="container mx-auto py-5 lg:py-10">
             <?php do_action('tailpress_footer'); ?>
-            <div class="flex items-center justify-center flex-wrap">
+            <div class="grid grid-flow-row grid-cols-12">
                 <?php dynamic_sidebar('sidebar-footer'); ?>
             </div>
             <div class="flex items-center justify-center flex-wrap">

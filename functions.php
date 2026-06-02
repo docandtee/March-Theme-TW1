@@ -212,7 +212,7 @@ if (!function_exists('docandtee_widgets_init')) {
         register_sidebar(array(
             'name'          => __('Footer', 'docandtee'),
             'id'            => 'sidebar-footer',
-            'before_widget' => '<aside class="widget %1$s %2$s p-3" aria-label="%1$s">',
+            'before_widget' => '<aside class="widget %1$s %2$s col-span-12 lg:col-span-4" aria-label="%1$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h3 class="widget-title mb-3 font-bold">',
             'after_title'   => '</h3>'
