@@ -3,7 +3,7 @@
 	$fullwidth = get_field('full_width_blocks');
 ?>
    
-<section class="staggered-block mt-0! section-p-t section-p-b <?php if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
+<section class="staggered-block mt-0! <?php if( $fullwidth ) {echo ' fullwidth';} ?> overflow-hidden" aria-label="Staggered content">
 
 	<?php while( have_rows('content_block') ): the_row(); ?>
 	
@@ -16,7 +16,7 @@
 			$button_external_link = get_sub_field('button_external_link');
 		?>
 	
-	<div class="grid grid-flow-row grid-cols-12 gap-0 <?php if( !$fullwidth ) {echo ' section-p-t';} ?>">
+	<div class="grid grid-flow-row grid-cols-12 gap-0 section-p-t section-p-b">
 		
 		<?php if ( $image ): ?>
 			<div class="img-block col-span-12 lg:col-span-6">
