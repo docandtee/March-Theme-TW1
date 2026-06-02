@@ -10,6 +10,7 @@
 		<?php 
 			$image = get_sub_field('image_block');
 			$block_title = get_sub_field('block_title');
+			$block_subtitle = get_sub_field('block_subtitle');
 			$block_text = get_sub_field('block_text');
 			$button_text = get_sub_field('button_text');
 			$button_link = get_sub_field('button_link');
@@ -30,6 +31,7 @@
 		<div class="text-block col-span-12 lg:col-span-6 flex flex-col justify-center">
 			<div class="content-inner py-8 md:py-16">
 				<?php if( $block_title ) { echo '<h2 class="block-bottom mb-4 mt-0!">' .esc_html($block_title). '</h2>'; } ?>
+				<?php if( $block_subtitle ) { echo '<h3 class="block-bottom mb-4 mt-0! text-primary">' .esc_html($block_subtitle). '</h3>'; } ?>
 				<?php if( $block_text ) { echo '<div class="copy-wrap">' .$block_text. '</div>'; } ?>
 				<?php if( $button_link && $button_text ) {
 					echo '
