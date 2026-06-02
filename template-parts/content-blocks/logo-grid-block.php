@@ -5,7 +5,7 @@
     $show_logos_in_a_slider = get_field('show_logos_in_a_slider');
 ?>
 
-<section class="logo-grid fullwidth overflow-hidden bg-light mt-0! section-p-b section-p-t" aria-label="Logo grid">
+<section class="logo-grid fullwidth overflow-hidden bg-light m-0! section-p-b section-p-t" aria-label="Logo grid">
 
     <div class="container">
 
