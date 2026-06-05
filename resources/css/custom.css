@@ -424,12 +424,12 @@ h4 {
 }
 
 .logo-img {
-  filter: grayscale(100%) brightness(150%);
+  filter: grayscale(100%);
   transition: filter 0.3s ease;
   max-height: 120px;
   width: auto;
 
   &:hover {
-    filter: grayscale(0) brightness(100%);
+    filter: grayscale(0);
   }
 }
