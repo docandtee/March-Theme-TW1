@@ -32,9 +32,9 @@
                                         if ( $logo ):
                         ?>
                             <li class="splide__slide h-full p-0!">
-                                <div class="h-full w-full px-2 flex flex-col overflow-hidden items-center justify-center">
+                                <div class="h-full w-full px-4 flex flex-col overflow-hidden items-center justify-center">
                                     <?php if($company_url) { echo '<a href="'.esc_url($company_url).'" target="_blank" rel="noopener noreferrer" aria-label="Visit company website (opens in new tab)" class="flex-shrink-0 w-full h-full flex items-center justify-center">';} ?>
-                                        <?php docandtee_responsive_image($logo, null, '20vw', 'max-w-full max-h-full object-contain'); ?>
+                                        <?php docandtee_responsive_image($logo, null, '20vw', 'logo-img'); ?>
                                     <?php if($company_url) { echo '</a>';} ?>
                                 </div>
                             </li>
@@ -57,7 +57,7 @@
                     <?php if ( $logo ): ?>
                     <div class="col-span-6 md:col-span-4 lg:col-span-2">
                         <?php if($company_url) { echo '<a href="'.esc_url($company_url).'" target="_blank" rel="noopener noreferrer" aria-label="Visit company website (opens in new tab)">';} ?>
-                            <?php docandtee_responsive_image($logo, null, '20vw', 'max-w-full max-h-full object-contain'); ?>
+                            <?php docandtee_responsive_image($logo, null, '20vw', 'logo-img'); ?>
                         <?php if( $company_url ) { echo '</a>';} ?>
                     </div>
                     <?php endif; ?>

@@ -422,3 +422,14 @@ h4 {
 		filter: blur(0);
 	}
 }
+
+.logo-img {
+  filter: grayscale(100%) brightness(150%);
+  transition: filter 0.3s ease;
+  max-height: 120px;
+  width: auto;
+
+  &:hover {
+    filter: grayscale(0) brightness(100%);
+  }
+}
