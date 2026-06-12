@@ -13,7 +13,7 @@
 
     <?php do_action('tailpress_content_after'); ?>
 
-    <footer id="colophon" class="bg-dark" role="contentinfo">
+    <footer id="colophon" class="bg-dark relative" role="contentinfo">
         <div class="container border-t-1 border-tertiary section-p-t section-p-b">
             <?php do_action('tailpress_footer'); ?>
             <div class="grid grid-flow-row grid-cols-12">
