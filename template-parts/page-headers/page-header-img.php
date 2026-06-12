@@ -48,7 +48,7 @@
         <div class="absolute inset-0 w-full h-full bg-black opacity-40"></div>
     </div>
 
-    <div class="header-content relative w-full h-full flex items-center text-white">
+    <div class="header-content relative w-full h-full flex items-end text-white">
         <?php get_template_part('template-parts/page-headers/page-header-title'); ?>
     </div>
     <?php if($photo_credit) { echo '<div class="photocredit absolute z-3 top-0 end-0 small p-3 text-white" role="note" aria-label="Photo credit">'.esc_html($photo_credit).'</div>';} ?>
