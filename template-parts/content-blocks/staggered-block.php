@@ -29,13 +29,13 @@
 		<?php endif; ?> 
 	
 		<div class="text-block col-span-12 lg:col-span-6 flex flex-col justify-center">
-			<div class="content-inner pb-4">
+			<div class="content-inner">
 				<?php if( $block_title ) { echo '<h2 class="mb-4 mt-0!">' .esc_html($block_title). '</h2>'; } ?>
 				<?php if( $block_subtitle ) { echo '<h3 class="text-xl mb-4 mt-0! text-primary">' .esc_html($block_subtitle). '</h3>'; } ?>
 				<?php if( $block_text ) { echo '<div class="copy-wrap">' .$block_text. '</div>'; } ?>
 				<?php if( $button_link && $button_text ) {
 					echo '
-						<div class="mt-12"><a 
+						<div class="my-6 inline-block"><a 
 							href="'.esc_url($button_link).'" 
 							class="staggered-btn py-3 px-5 font-bold bg-primary hover:bg-dark border-primary text-white! rounded-full !no-underline transition duration-200 ease-in-out text-nowrap focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:outline-none"
 						>'.esc_html($button_text).'</a></div>
