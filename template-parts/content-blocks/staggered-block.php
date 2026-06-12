@@ -22,7 +22,7 @@
 		<?php if ( $image ): ?>
 			<div class="img-block col-span-12 lg:col-span-6">
 				<div class="relative lg:h-full lg:min-h-128">
-					<?php docandtee_responsive_image( $image, null, '(min-width: 960px) 50vw, 100vw', 'aspect-3/2 w-full absolute lg:h-full lg:object-cover' ); ?>
+					<?php docandtee_responsive_image( $image, null, '(min-width: 960px) 50vw, 100vw', 'aspect-3/2 w-full lg:absolute lg:h-full lg:object-cover' ); ?>
 				</div>
 			</div>
 
