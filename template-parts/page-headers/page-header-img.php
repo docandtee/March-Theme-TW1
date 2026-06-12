@@ -4,7 +4,7 @@
 ?>
 <section class="page-header relative overflow-hidden hero-height flex items-center" aria-label="Page header with featured image">
 
-    <div class="fixed flex justify-center items-center w-full h-full">
+    <div class="fixed flex justify-center items-center w-full hero-height">
         <?php if( $parallax ) : ?>
             <div class="w-full md:w-[120%] h-full md:h-auto absolute">
                 <?php docandtee_responsive_image(null, null, '(min-width: 1280px) 80vw, 100vw', 'parallax-bg w-full h-full object-cover'); ?>
