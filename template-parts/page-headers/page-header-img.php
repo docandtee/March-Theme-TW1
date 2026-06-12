@@ -2,7 +2,7 @@
     $photo_credit = get_field('photo_credit');
     $parallax = get_field('add_parallax_scrolling');
 ?>
-<section class="page-header relative overflow-hidden hero-height" aria-label="Page header with featured image">
+<section class="page-header relative overflow-hidden hero-height flex items-center" aria-label="Page header with featured image">
 
     <div class="fixed flex justify-center items-center w-full h-full">
         <?php if( $parallax ) : ?>
