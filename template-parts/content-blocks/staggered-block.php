@@ -22,14 +22,14 @@
 		<?php if ( $image ): ?>
 			<div class="img-block col-span-12 lg:col-span-6">
 				<div class="relative h-full min-h-128">
-					<?php docandtee_responsive_image( $image, null, '(min-width: 960px) 50vw, 100vw', 'w-full absolute h-full object-cover' ); ?>
+					<?php docandtee_responsive_image( $image, null, '(min-width: 960px) 50vw, 100vw', 'w-full absolute h-full object-cover aspect-3/2' ); ?>
 				</div>
 			</div>
 
 		<?php endif; ?> 
 	
 		<div class="text-block col-span-12 lg:col-span-6 flex flex-col justify-center">
-			<div class="content-inner">
+			<div class="content-inner mt-6 lg:mt-0">
 				<?php if( $block_title ) { echo '<h2 class="mb-4 mt-0!">' .esc_html($block_title). '</h2>'; } ?>
 				<?php if( $block_subtitle ) { echo '<h3 class="text-xl mb-4 mt-0! text-primary">' .esc_html($block_subtitle). '</h3>'; } ?>
 				<?php if( $block_text ) { echo '<div class="copy-wrap">' .$block_text. '</div>'; } ?>
