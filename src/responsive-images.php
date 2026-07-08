@@ -23,10 +23,14 @@ update_option('large_crop', 0);
 /**
  * Render a responsive image from an attachment ID
  *
- * int|null    $image_id   The attachment ID (e.g. from ACF). If null, will use post thumbnail.
- * int|null    $post_id    Post ID (only needed if using thumbnail).
- * string|null $sizes_attr Custom sizes attribute.
- * string      $class      Additional CSS class.
+ * Uses attachment metadata for correct size URLs and dimensions. Supports Performance Lab
+ * Modern Image Formats: AVIF filenames use the -jpg.avif / -png.avif / -gif.avif convention.
+ * SVG and other formats use the original file as fallback (no AVIF variant).
+ *
+ * @param int|null    $image_id   The attachment ID (e.g. from ACF). If null, will use post thumbnail.
+ * @param int|null    $post_id    Post ID (only needed if using thumbnail).
+ * @param string|null $sizes_attr Custom sizes attribute.
+ * @param string      $class      Additional CSS class.
  */
 function docandtee_responsive_image( $image_id = null, $post_id = null, $sizes_attr = null, $class = '' ) {
     // If no image ID passed, fallback to featured image
@@ -36,46 +40,139 @@ function docandtee_responsive_image( $image_id = null, $post_id = null, $sizes_a
     }
 
     if ( ! $image_id ) {
-        return; // no image available
+        return;
     }
 
-    // Get URLs for specific sizes
-    $src_thumb  = wp_get_attachment_image_url( $image_id, 'thumbnail' );
-    $src_small  = wp_get_attachment_image_url( $image_id, 'medium' );
-    $src_medium = wp_get_attachment_image_url( $image_id, 'medium_large' );
-    $src_large  = wp_get_attachment_image_url( $image_id, 'large' );
-    $src_1536   = wp_get_attachment_image_url( $image_id, '1536x1536' );
-    $src_2048   = wp_get_attachment_image_url( $image_id, '2048x2048' );
+    $meta = wp_get_attachment_metadata( $image_id );
+    if ( ! $meta || empty( $meta['file'] ) ) {
+        return;
+    }
 
-    // Build srcset
-    $srcset = [];
-    if ( $src_thumb )  $srcset[] = "{$src_thumb} 480w";
-    if ( $src_small )  $srcset[] = "{$src_small} 782w";
-    if ( $src_medium ) $srcset[] = "{$src_medium} 960w";
-    if ( $src_large )  $srcset[] = "{$src_large} 1280w";
-    if ( $src_1536 )   $srcset[] = "{$src_1536} 1536w";
-    if ( $src_2048 )   $srcset[] = "{$src_2048} 2048w";
+    $upload_dir = wp_upload_dir();
+    if ( ! empty( $upload_dir['error'] ) ) {
+        return;
+    }
 
-    // Default sizes if none provided
+    $base_url = $upload_dir['baseurl'] . '/' . dirname( $meta['file'] );
+    $base_dir = $upload_dir['basedir'] . '/' . dirname( $meta['file'] );
+
+    // Size slugs and their width descriptors for srcset (order matches WordPress size order)
+    $sizes_config = [
+        'thumbnail'    => 480,
+        'medium'       => 782,
+        'medium_large' => 960,
+        'large'        => 1280,
+        '1536x1536'    => 1536,
+        '2048x2048'    => 2048,
+    ];
+
+    $srcset_entries     = [];
+    $avif_srcset_entries = [];
+    $has_any_avif       = false;
+
+    foreach ( $sizes_config as $size_name => $width_fallback ) {
+        if ( empty( $meta['sizes'][ $size_name ]['file'] ) ) {
+            continue;
+        }
+
+        $file  = $meta['sizes'][ $size_name ]['file'];
+        $width = ! empty( $meta['sizes'][ $size_name ]['width'] ) ? (int) $meta['sizes'][ $size_name ]['width'] : $width_fallback;
+        $url   = $base_url . '/' . $file;
+
+        if ( empty( $srcset_entries ) ) {
+            $src = $url;
+        }
+        $srcset_entries[] = esc_url( $url ) . ' ' . $width . 'w';
+
+        // Performance Lab naming: basename-jpg.avif, -png.avif, -gif.avif (same dir as original).
+        // SVG and other extensions don't get AVIF; we use original URL as fallback for those.
+        $avif_file = preg_replace_callback(
+            '/\.(jpe?g|png|gif)(\?.*)?$/i',
+            function ( $m ) {
+                $ext    = strtolower( $m[1] );
+                $suffix = ( $ext === 'jpeg' || $ext === 'jpg' ) ? 'jpg' : ( $ext === 'png' ? 'png' : 'gif' );
+                return '-' . $suffix . '.avif' . ( isset( $m[2] ) ? $m[2] : '' );
+            },
+            $file
+        );
+
+        // Use AVIF URL when file exists; otherwise fallback to original (JPEG/PNG/GIF/SVG etc.) for this size
+        if ( $avif_file !== $file ) {
+            $avif_path = $base_dir . '/' . $avif_file;
+            if ( file_exists( $avif_path ) ) {
+                $avif_url = $base_url . '/' . $avif_file;
+                $avif_srcset_entries[] = esc_url( $avif_url ) . ' ' . $width . 'w';
+                $has_any_avif = true;
+            } else {
+                $avif_srcset_entries[] = esc_url( $url ) . ' ' . $width . 'w';
+            }
+        } else {
+            $avif_srcset_entries[] = esc_url( $url ) . ' ' . $width . 'w';
+        }
+    }
+
+    // When image is smaller than all registered sizes (e.g. small PNG), WordPress may not create any
+    // sub-sizes; use the full/original file so an image still displays.
+    if ( empty( $srcset_entries ) ) {
+        $full_file = basename( $meta['file'] );
+        $full_url  = $base_url . '/' . $full_file;
+        $width     = ! empty( $meta['width'] ) ? (int) $meta['width'] : 480;
+        $src       = $full_url;
+        $srcset_entries[] = esc_url( $full_url ) . ' ' . $width . 'w';
+
+        $avif_file = preg_replace_callback(
+            '/\.(jpe?g|png|gif)(\?.*)?$/i',
+            function ( $m ) {
+                $ext    = strtolower( $m[1] );
+                $suffix = ( $ext === 'jpeg' || $ext === 'jpg' ) ? 'jpg' : ( $ext === 'png' ? 'png' : 'gif' );
+                return '-' . $suffix . '.avif' . ( isset( $m[2] ) ? $m[2] : '' );
+            },
+            $full_file
+        );
+        if ( $avif_file !== $full_file ) {
+            $avif_path = $base_dir . '/' . $avif_file;
+            if ( file_exists( $avif_path ) ) {
+                $avif_url = $base_url . '/' . $avif_file;
+                $avif_srcset_entries[] = esc_url( $avif_url ) . ' ' . $width . 'w';
+                $has_any_avif = true;
+            } else {
+                $avif_srcset_entries[] = esc_url( $full_url ) . ' ' . $width . 'w';
+            }
+        } else {
+            $avif_srcset_entries[] = esc_url( $full_url ) . ' ' . $width . 'w';
+        }
+    }
+
+    if ( empty( $srcset_entries ) ) {
+        return;
+    }
+
     if ( ! $sizes_attr ) {
         $sizes_attr = '(min-width: 1536px) 40vw, (min-width: 1280px) 50vw, (min-width: 960px) 60vw, 80vw';
     }
 
-    // Get alt text (fallback: attachment title)
-    $alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ?: get_the_title( $image_id );
-
-    // Add class attribute if provided
+    $alt       = get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ?: get_the_title( $image_id );
     $class_attr = $class ? ' class="' . esc_attr( $class ) . '"' : '';
 
-    // Output HTML
+    $has_avif = $has_any_avif;
+
+    if ( $has_avif ) {
+        echo '<picture' . $class_attr . '>';
+        echo '<source type="image/avif" srcset="' . implode( ', ', $avif_srcset_entries ) . '" sizes="' . esc_attr( $sizes_attr ) . '" />';
+    }
+
     printf(
         '<img src="%s" srcset="%s" sizes="%s" alt="%s"%s />',
-        esc_url( $src_thumb ),
-        esc_attr( implode( ', ', $srcset ) ),
+        esc_url( $src ),
+        esc_attr( implode( ', ', $srcset_entries ) ),
         esc_attr( $sizes_attr ),
         esc_attr( $alt ),
         $class_attr
     );
+
+    if ( $has_avif ) {
+        echo '</picture>';
+    }
 }
 
 /* uses:

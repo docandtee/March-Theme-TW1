@@ -9,16 +9,14 @@
         <?php do_action('tailpress_content_end'); ?>
     </div><!-- #content -->
 
+    <?php get_template_part('template-parts/partials/footer-contact'); ?>
+
     <?php do_action('tailpress_content_after'); ?>
 
-    <?php if( is_front_page() ) { get_template_part('template-parts/partials/footer-home-news'); } ?>
-
-    <?php get_template_part('template-parts/partials/footer-newsletter'); ?>
-
-    <footer id="colophon" class="bg-dark text-white" role="contentinfo">
-        <div class="container mx-auto py-5 lg:py-10">
+    <footer id="colophon" class="bg-dark relative" role="contentinfo">
+        <div class="container border-t-1 border-tertiary section-p-t section-p-b">
             <?php do_action('tailpress_footer'); ?>
-            <div class="flex items-center justify-center flex-wrap">
+            <div class="grid grid-flow-row grid-cols-12">
                 <?php dynamic_sidebar('sidebar-footer'); ?>
             </div>
             <div class="flex items-center justify-center flex-wrap">

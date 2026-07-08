@@ -3,11 +3,11 @@
 function _wp_docandtee_create_post_types() {
 	
 		
-	register_post_type( 'friends',
+	register_post_type( 'case-studies',
 		array(
 			'labels' => array(
-				'name' => __( 'Partners', 'docandtee' ),
-				'singular_name' => __( 'Partner', 'docandtee' )
+				'name' => __( 'Case Studies', 'docandtee' ),
+				'singular_name' => __( 'Case Study', 'docandtee' )
 			),
 			'public' => true,
 			'has_archive' => false,
@@ -15,20 +15,33 @@ function _wp_docandtee_create_post_types() {
 			'show_ui' => true,
 			'show_in_rest' => true,
 			'supports' => array( 'title', 'thumbnail', 'editor', 'excerpt', 'custom-fields'),
-			'rewrite' => array('slug' => 'our-partners'),
+			'rewrite' => array('slug' => 'case-studies'),
 		)
 	);
 
 	register_taxonomy(
-		'venue-tax',
-		[ 'venue', 'music', 'talk', 'workshop'],
+		'sector',
+		[ 'case-studies'],
 		array(
 				'hierarchical' => true,
-				'label' => __( 'Venues', 'docandtee' ),
+				'label' => __( 'Sector', 'docandtee' ),
 				'show_ui' => true,
 				'show_in_rest' => true,
 				'show_admin_column' => true,
-				'rewrite' => array( 'slug' => 'venue-tax' )
+				'rewrite' => array( 'slug' => 'sector' )
+		)
+	);
+
+	register_taxonomy(
+		'location',
+		[ 'case-studies'],
+		array(
+				'hierarchical' => true,
+				'label' => __( 'Location', 'docandtee' ),
+				'show_ui' => true,
+				'show_in_rest' => true,
+				'show_admin_column' => true,
+				'rewrite' => array( 'slug' => 'location' )
 		)
 	);
 

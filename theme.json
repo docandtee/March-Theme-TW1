@@ -9,29 +9,29 @@
     "color": {
       "palette": [
         {
-          "name": "Primary",
+          "name": "Gold",
           "slug": "primary",
-          "color": "#E56145"
+          "color": "#C2A24A"
         },
         {
-          "name": "Secondary",
+          "name": "Green",
           "slug": "secondary",
-          "color": "#F7B239"
+          "color": "#3A6561"
         },
         {
-          "name": "Tertiary",
+          "name": "Slate",
           "slug": "tertiary",
-          "color": "#5D4EC7"
+          "color": "#8FA7A4"
         },
         {
-          "name": "Dark",
+          "name": "Dark Teal",
           "slug": "dark",
-          "color": "#2F2F47"
+          "color": "#293536"
         },
         {
-          "name": "Light",
+          "name": "Cream",
           "slug": "light",
-          "color": "#F1EAD3"
+          "color": "#D9D3C7"
         }
       ]
     },

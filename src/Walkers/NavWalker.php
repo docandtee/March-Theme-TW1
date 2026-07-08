@@ -17,11 +17,11 @@ if (!class_exists('Tailwind_Navwalker')) {
         {
             $indent = str_repeat("\t", $depth);
             $classes = array(
-                'relative md:absolute left-0 py-1 w-full md:w-48 bg-transparent md:bg-white rounded-md z-50 overflow-hidden',
+                'relative md:absolute left-0 py-1 w-full md:w-48 bg-transparent md:bg-white z-50 overflow-hidden',
                 'origin-top-left transition ease-out duration-100',
             );
             $class_names = ' class="' . esc_attr(join(' ', $classes)) . '"';
-            $output .= "\n$indent<ul x-show=\"open\" x-transition $class_names @click.away=\"open = false\" x-cloak role=\"menu\">\n";
+            $output .= "\n$indent<ul x-show=\"open\" x-transition $class_names @click.away=\"open = false\" x-cloak role=\"menu\" style=\"display: none;\">\n";
         }
 
         /**
@@ -58,7 +58,7 @@ if (!class_exists('Tailwind_Navwalker')) {
                 $atts['class'] = 'block px-3 py-2 text-white lg:text-dark hover:text-primary font-display leading-none no-underline!';
                 $atts['role'] = 'menuitem';
             } else {
-                $atts['class'] = 'cursor-pointer menu-link px-3 py-2 inline-flex items-center text-white lg:text-dark hover:text-primary text-xl font-display no-underline!';
+                $atts['class'] = 'cursor-pointer menu-link px-3 py-2 inline-flex items-center text-white hover:text-primary text-lg no-underline! font-bold';
             }
 
             // Add aria-current for current page
@@ -83,7 +83,7 @@ if (!class_exists('Tailwind_Navwalker')) {
                 $item_output .= 'aria-haspopup="true" ';
                 $item_output .= 'aria-controls="' . esc_attr($submenu_id) . '">';
                 $item_output .= esc_html($title);
-                $item_output .= '<svg class="w-4 h-4 ml-1 text-gray-500 transition-transform duration-200" :class="{\'rotate-180\': open}" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                $item_output .= '<svg class="w-4 h-4 ml-1 text-white transition-transform duration-200" :class="{\'rotate-180\': open}" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                 </svg>';
                 $item_output .= '</button>';

@@ -70,7 +70,7 @@ $docandtee_includes = [
     'Walkers/NavWalker.php', // Tailwind Nav Walker
     'theme-settings-menu.php',    // Register social links
     'gutenberg-blocks.php',    // Gutenberg blocks support
-    //'cpt.php',    // Custom post types
+    'cpt.php',    // Custom post types
     //'shared-taxonomies.class.php',    // Shared taxonomies
     //'access.php',    // Access controls
 ];
@@ -164,7 +164,7 @@ add_filter('widget_nav_menu_args', function($args) {
             'walker'            => new Tailwind_Navwalker,
             'container'         => 'nav',
             'container_class'   => 'widget-nav',
-            'menu_class'        => 'nav flex flex-wrap items-center justify-center',
+            'menu_class'        => 'nav',
             'depth'             => 1,
         )
     );
@@ -212,7 +212,7 @@ if (!function_exists('docandtee_widgets_init')) {
         register_sidebar(array(
             'name'          => __('Footer', 'docandtee'),
             'id'            => 'sidebar-footer',
-            'before_widget' => '<aside class="widget %1$s %2$s p-3" aria-label="%1$s">',
+            'before_widget' => '<aside class="widget %1$s %2$s col-span-12 lg:col-span-4" aria-label="%1$s">',
             'after_widget'  => '</aside>',
             'before_title'  => '<h3 class="widget-title mb-3 font-bold">',
             'after_title'   => '</h3>'

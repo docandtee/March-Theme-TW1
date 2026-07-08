@@ -1,8 +1,12 @@
 <?php 
 	$backgroundvid = get_field('replace_featured_image_with_background_video');
 	$slider = get_field('use_slider');
-	if( $slider) :
-?>
+	$animation_bg = get_field('animation_bg');
+	if( $animation_bg ) : ?>
+
+	<?php get_template_part('template-parts/page-headers/page-header-animation'); ?>
+
+<?php elseif( $slider) :?>
 
 	<?php get_template_part('template-parts/page-headers/page-header-carousel'); ?>
 	

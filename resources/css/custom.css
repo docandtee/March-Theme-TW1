@@ -1,7 +1,7 @@
 html {
-  background-color: var(--color-light);
-  font-size: 16px;
-  color: var(--color-dark);
+  background-color: var(--color-dark);
+  font-size: 14px;
+  color: #fff;
   overflow-x: hidden;
 }
 
@@ -12,10 +12,12 @@ body {
 h1, h2, h3, h4 {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-display);
+  line-height: 1.2;
 }
 
 h1 {
   font-size: var(--text-4xl);
+  line-height: 1.2;
 }
 
 h2 {
@@ -48,34 +50,9 @@ h4 {
   }
 }
 
-@media (min-width: 1280px) {
-  h1 {
-    font-size: var(--text-6xl);
-  }
-
-  h2 {
-    font-size: var(--text-5xl);
-  }
-
-  h3 {
-    font-size: var(--text-4xl);
-  }
-
-  h4 {
-    font-size: var(--text-2xl);
-  }
-}
 
 .hero-height {
-  height: 30rem;
-
-  @media (min-width: 960px) {
-    height: 35rem;
-  }
-
-  @media (min-width: 1280px) {
-    height: 40rem;
-  }
+  height: 40rem;
 }
 
 .section-p-t {
@@ -114,7 +91,7 @@ h4 {
 .block-editor-block-list__layout {
 
   :where(
-      .entry-content > *:not(li),
+      & > *:not(li),
       .block-editor-block-list__layout > *:not(li)
     ) {
     margin-top: --spacing(6);
@@ -201,13 +178,48 @@ h4 {
   color: var(--color-primary);
 }
 
-@media (min-width: 960px) {
-  .staggered-block {
+
+.staggered-block {
+  @media (min-width: 960px) {
+    .content-inner {
+      padding-left: calc(var(--spacing)*20);
+    }
     .grid-flow-row:nth-child(2n) {
       .img-block {
         order: 2;
       }
+      .content-inner {
+        padding-right: calc(var(--spacing)*20);
+        padding-left: 0;
+      }
     }
+  }
+
+  &.fullwidth {
+
+    .grid-flow-row:nth-child(2), .grid-flow-row:nth-child(5) {
+      background-color: var(--color-primary);
+      color: #fff;
+
+      .staggered-btn {
+        background-color: var(--color-light) !important;
+        color: var(--color-dark) !important;
+
+        &:hover { 
+          background-color: var(--color-dark) !important;
+          color: var(--color-light) !important;
+        } 
+      }
+    }
+    
+    .grid-flow-row:nth-child(3), .grid-flow-row:nth-child(6) {
+      background-color: var(--color-light);
+      color: var(--color-dark);
+    }
+  }
+
+  .copy-wrap > *:not(h4) {
+    margin-bottom: --spacing(6);
   }
 }
 
@@ -263,5 +275,161 @@ h4 {
     .splide__arrow svg {
       fill: var(--color-light) !important;
     }
+  }
+}
+
+.text-grid-block {
+  .text-block:nth-child(2n) {
+    background-color: var(--color-light) !important;
+    color: var(--color-dark) !important;
+
+    .arrow-btn {
+      color: var(--color-dark) !important;
+      .arrow {
+        fill: var(--color-dark);
+      }
+
+      &:hover {
+        color: var(--color-primary) !important;
+        .arrow {
+          fill: var(--color-primary) !important;
+        }
+      }
+    }
+  }
+}
+
+.arrow-btn, .header-btn {
+  .arrow {
+    fill: var(--color-dark);
+    height: 1rem;
+  }
+
+  &:hover {
+    .arrow {
+      fill: var(--color-light) !important;
+    }
+  }
+}
+
+.read-more-btn {
+  .arrow {
+    fill: var(--color-primary);
+    height: .75rem;
+  }
+
+  &:hover {
+    .arrow {
+      fill: var(--color-light) !important;
+    }
+  }
+}
+
+.particles-bg {
+  background-color: var(--color-dark);
+  background: linear-gradient(to bottom, var(--color-secondary), var(--color-dark));
+}
+
+.particle {
+  background-image: url(../images/arrows-bg.svg);
+  background-blend-mode: overlay;
+
+  &.particle-1 {
+    background-size: 1920px 800px;
+    animation: animParticle 15s linear infinite;
+  }
+  &.particle-1b {
+    background-size: 1920px 800px;
+    animation: animParticle2 15s linear infinite;
+  }
+
+  &.particle-2 {
+    background-size: 960px 400px;
+    animation: animParticle 20s linear infinite;
+  }
+  &.particle-2b {
+    background-size: 960px 400px;
+    animation: animParticle2 20s linear infinite;
+  }
+
+  &.particle-3 {
+    background-size: 480px 200px;
+    animation: animParticle 30s linear infinite;
+  }
+  &.particle-3b {
+    background-size: 480px 200px;
+    animation: animParticle2 30s linear infinite;
+  }
+}
+
+@keyframes animParticle {
+  from {
+            transform: translateY(0px);
+  }
+  to {
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes animParticle2 {
+  from {
+            transform: translateY(100%);
+  }
+  to {
+            transform: translateY(0);
+  }
+}
+
+.stats-circle-wrapper {
+	width: 110px;
+	height: 110px;
+	position: relative;
+}
+
+.stats-circle-wrapper .stats-circle-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.stats-circle-wrapper .stats-circle-container svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.stats-circle-wrapper .stats-circle-value {
+	font-weight: 700;
+	font-size: 1.125rem;
+}
+
+/* Page header title & subtitle: word-by-word fade-in with blur */
+.page-header-title-words .page-header-word,
+.page-header-subtitle-words .page-header-word {
+	opacity: 0;
+	filter: blur(0.25em);
+	animation: page-header-word-in 1.6s ease forwards;
+	animation-delay: calc(var(--word-index) * 0.1s);
+}
+
+.page-header-subtitle-words .page-header-word {
+	animation-delay: calc(0.15s + var(--word-index) * 0.1s);
+}
+
+@keyframes page-header-word-in {
+	to {
+		opacity: 1;
+		filter: blur(0);
+	}
+}
+
+.logo-img {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  max-height: 120px;
+  width: auto;
+
+  &:hover {
+    filter: grayscale(0);
   }
 }
